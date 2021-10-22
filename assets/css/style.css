@@ -1,0 +1,82 @@
+@import url("https://fonts.googleapis.com/css2?family=Gabriela&family=Roboto+Slab");
+body {
+  /* Inheritable properties*/
+  font-family: "Gabriela";
+  font-weight: 600;
+  font-size: 1.6rem;
+  line-height: 1.7;
+  color: #1b2024;
+}
+
+/* Basic reset */
+*, *::after, *::before {
+  text-decoration: none;
+  padding: 0;
+  margin: 0;
+  box-sizing: inherit;
+}
+
+html {
+  /* Since browser default font-size is 16px*/
+  /* Set it to 10px to make converting px to rem easier. */
+  /* Use a percentage so that if a user changes the font size */
+  /* on their browser, or zooms the font sizes, padding  */
+  /* and margins adjust accordingly. */
+  /* This defines what 1rem is */
+  font-size: 62.5%;
+}
+
+body {
+  /* Inheritable properties*/
+  box-sizing: border-box;
+  /* Non-inheritable*/
+  padding: 3rem;
+}
+
+.utilCentreText {
+  text-align: center;
+}
+
+.utilMarginTopSmall {
+  margin-top: 2rem;
+}
+
+.utilMarginTopMedium {
+  margin-top: 4rem;
+}
+
+.utilMarginTopBig {
+  margin-top: 8rem;
+}
+
+.utilMarginBottomSmall {
+  margin-bottom: 2rem;
+}
+
+.utilMarginBottomMedium {
+  margin-bottom: 4rem;
+}
+
+.utilMarginBottomBig {
+  margin-bottom: 8rem;
+}
+
+.utilHide {
+  display: none;
+}
+
+.storySection {
+  display: flex;
+  flex-direction: row;
+}
+.storyPicContainer {
+  width: 70%;
+}
+.storyText {
+  width: 30%;
+}
+.storyPicture {
+  width: 100%;
+}
+
+/*# sourceMappingURL=style.css.map */
