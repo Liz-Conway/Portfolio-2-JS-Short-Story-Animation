@@ -1,11 +1,16 @@
 @import url("https://fonts.googleapis.com/css2?family=Gabriela&family=Roboto+Slab");
 body {
-  /* Inheritable properties*/
+  /* Inheritable properties */
   font-family: "Gabriela";
   font-weight: 600;
   font-size: 1.6rem;
   line-height: 1.7;
-  color: #1b2024;
+  color: #1b2024; 
+}
+
+h1 {
+  color: #fd5404;
+  text-shadow: 1px 1px 0px #e64b02, 2px 2px 0px #cc4302, 3px 3px 0px #b33b01, 4px 4px 0px #9a3201, 4px 4px 2px #000;
 }
 
 /* Basic reset */
@@ -17,7 +22,7 @@ body {
 }
 
 html {
-  /* Since browser default font-size is 16px*/
+  /* Since browser default font-size is 16px */
   /* Set it to 10px to make converting px to rem easier. */
   /* Use a percentage so that if a user changes the font size */
   /* on their browser, or zooms the font sizes, padding  */
@@ -27,9 +32,9 @@ html {
 }
 
 body {
-  /* Inheritable properties*/
+  /* Inheritable properties */
   box-sizing: border-box;
-  /* Non-inheritable*/
+  /* Non-inheritable */
   padding: 3rem;
 }
 
@@ -68,15 +73,18 @@ body {
 .storySection {
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
 }
+
 .storyPicContainer {
   width: 70%;
 }
+
 .storyText {
-  width: 30%;
+  width: 25%;
 }
+
 .storyPicture {
   width: 100%;
 }
 
-/*# sourceMappingURL=style.css.map */
