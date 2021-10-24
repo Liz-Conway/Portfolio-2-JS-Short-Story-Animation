@@ -10,16 +10,20 @@ function playAnimation() {
 	let sceneOneText = ["This story is about pandemics and the Coronavirus.", 
 						"A pandemic is where many people in a large area become sick.", 
 						"A pandemic is usually caused by a virus."];
+						
+	let sceneOneParagraph = "This story is about pandemics and the Coronavirus.  A pandemic is where many people in a large area become sick.  A pandemic is usually caused by a virus.";
 	
-	for(let i = 0; i < sceneOneText.length; i++) {
+	typeParagraph(sceneOneParagraph);
+	
+	/*for(let i = 0; i < sceneOneText.length; i++) {
 		console.log(textParagraphs);
 		textParagraphs[i].innerHTML = sceneOneText[i];
-	}
+	}*/
 }
 
-function typeStuff() {
+function typeParagraph($text) {
 	var typed = new Typed('.para1', {
-		strings: ["Press Play button below"],
+		strings: [$text],
 		typeSpeed: 100,
 		loop: false,
 		showCursor: false
