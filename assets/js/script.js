@@ -21,6 +21,24 @@ function playAnimation() {
 	clearParagraph();
 	typeParagraph(sceneOneParagraph);
 	
+	/** https://www.w3schools.com/js/tryit.asp?filename=tryjs_timing2 */
+	/** https://www.programiz.com/javascript/examples/pass-parameter-setTimeout */
+	setTimeout(showSceneTwo, 30000, pictureImage, sentencePause);
+	
+}
+
+function showSceneTwo(pictureImage, sentencePause) {
+	pictureImage.src = "assets/images/grumpy-spike.gif";
+	
+	let sceneTwoParagraph = "The Coronavirus is a virus that is spreading fast and causing a worldwide pandemic now.  ";
+	sceneTwoParagraph += sentencePause;
+	sceneTwoParagraph += "Viruses are so small that it takes an electron microscope to see them.  ";
+	sceneTwoParagraph += sentencePause;
+	sceneTwoParagraph += "People can't see if a virus is near them'.";
+	
+	clearParagraph();
+	typeParagraph(sceneTwoParagraph);
+	
 }
 
 /** Use typed.js to type out the entered text */
