@@ -30,11 +30,11 @@ function playAnimation() {
 function showSceneTwo(pictureImage, sentencePause) {
 	pictureImage.src = "assets/images/grumpy-spike.gif";
 	
-	let sceneTwoParagraph = "The Coronavirus is a virus that is spreading fast and causing a worldwide pandemic now.  ";
+	let sceneTwoParagraph = "The Coronavirus is a virus that is spreading fast and causing a worldwide pandemic now.\n\n";
 	sceneTwoParagraph += sentencePause;
 	sceneTwoParagraph += "Viruses are so small that it takes an electron microscope to see them.  ";
 	sceneTwoParagraph += sentencePause;
-	sceneTwoParagraph += "People can't see if a virus is near them'.";
+	sceneTwoParagraph += "People can't see if a virus is near them.";
 	
 	clearParagraph();
 	typeParagraph(sceneTwoParagraph);

@@ -5,18 +5,21 @@ body {
   font-weight: 600;
   font-size: 1.6rem;
   line-height: 1.7;
-  color: #1b2024; }
+  color: #1b2024;
+}
 
 h1 {
   color: #fd5404;
-  text-shadow: 1px 1px 0px #e64b02, 2px 2px 0px #cc4302, 3px 3px 0px #b33b01, 4px 4px 0px #9a3201, 4px 4px 2px #000; }
+  text-shadow: 1px 1px 0px #e64b02, 2px 2px 0px #cc4302, 3px 3px 0px #b33b01, 4px 4px 0px #9a3201, 4px 4px 2px #000;
+}
 
 /* Basic reset */
 *, *::after, *::before {
   text-decoration: none;
   padding: 0;
   margin: 0;
-  box-sizing: inherit; }
+  box-sizing: inherit;
+}
 
 html {
   /* Since browser default font-size is 16px */
@@ -25,50 +28,90 @@ html {
   /* on their browser, or zooms the font sizes, padding  */
   /* and margins adjust accordingly. */
   /* This defines what 1rem is */
-  font-size: 62.5%; }
+  font-size: 62.5%;
+}
 
 body {
   /* Inheritable properties */
   box-sizing: border-box;
   /* Non-inheritable */
-  padding: 3rem; }
+  padding: 3rem;
+}
 
 .utilCentreText {
-  text-align: center; }
+  text-align: center;
+}
 
 .utilMarginTopSmall {
-  margin-top: 2rem; }
+  margin-top: 2rem;
+}
 
 .utilMarginTopMedium {
-  margin-top: 4rem; }
+  margin-top: 4rem;
+}
 
 .utilMarginTopBig {
-  margin-top: 8rem; }
+  margin-top: 8rem;
+}
 
 .utilMarginBottomSmall {
-  margin-bottom: 2rem; }
+  margin-bottom: 2rem;
+}
 
 .utilMarginBottomMedium {
-  margin-bottom: 4rem; }
+  margin-bottom: 4rem;
+}
 
 .utilMarginBottomBig {
-  margin-bottom: 8rem; }
+  margin-bottom: 8rem;
+}
 
 .utilHide {
-  display: none; }
+  display: none;
+}
+
+.storyText {
+  background: #4adf80;
+  position: relative;
+  font-family: "Gabriela";
+  font-size: 18px;
+  line-height: 24px;
+  border-radius: 40px;
+  padding: 24px;
+  text-align: center;
+  color: #1b2024;
+  height: 50vh;
+}
+
+/* https://codepen.io/run-time/pen/VNRBJd */
+.bubbleBottomLeft:before {
+  content: "";
+  width: 0px;
+  height: 0px;
+  position: absolute;
+  border-left: 24px solid #4adf80;
+  border-right: 12px solid transparent;
+  border-top: 12px solid #4adf80;
+  border-bottom: 20px solid transparent;
+  left: 32px;
+  bottom: -24px;
+}
 
 .storySection {
   display: flex;
   flex-direction: row;
-  justify-content: space-between; }
+  justify-content: space-between;
+}
 .storyPicContainer {
   width: 70%;
   height: 75vh;
   display: flex;
-  justify-content: center; }
+  justify-content: center;
+}
 .storyText {
-  width: 25%; }
+  width: 25%;
+}
 .storyPicture {
-  height: 100%; }
+  height: 100%;
+}
 
-/*# sourceMappingURL=style.css.map */
