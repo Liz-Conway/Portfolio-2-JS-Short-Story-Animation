@@ -108,10 +108,15 @@ body {
   display: flex;
   justify-content: center;
 }
-.storyText {
+.storyBubble {
   width: 25%;
 }
 .storyPicture {
   height: 100%;
 }
+
+.speechEmoji {
+  width: 25%;
+}
+
 
