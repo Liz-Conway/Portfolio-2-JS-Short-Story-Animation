@@ -17,3 +17,11 @@ function playAnimation() {
 	}
 }
 
+function typeStuff() {
+	var typed = new Typed('.para1', {
+		strings: ["Press Play button below"],
+		typeSpeed: 100,
+		loop: false,
+		showCursor: false
+	});
+}
