@@ -13,6 +13,7 @@ function playAnimation() {
 						
 	let sceneOneParagraph = "This story is about pandemics and the Coronavirus.  A pandemic is where many people in a large area become sick.  A pandemic is usually caused by a virus.";
 	
+	clearParagraph();
 	typeParagraph(sceneOneParagraph);
 	
 	/*for(let i = 0; i < sceneOneText.length; i++) {
@@ -28,4 +29,10 @@ function typeParagraph($text) {
 		loop: false,
 		showCursor: false
 	});
+}
+
+function clearParagraph() {
+	let storyParagraph = document.getElementsByClassName("para1")[0];
+	
+	storyParagraph.innerHTML = "";
 }
