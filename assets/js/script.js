@@ -1,29 +1,45 @@
 function playAnimation() {
 	let pictureImage = document.getElementsByClassName("storyPicture")[0];
 	
-	pictureImage.src = "assets/images/spinning-pandemic-globe-large.gif";
+	let sceneOnePic = "assets/images/spinning-pandemic-globe-large.gif";
 	
-	let sceneOneText = ["This story is about pandemics and the Coronavirus.", 
-						"A pandemic is where many people in a large area become sick.", 
+	let sceneOneText = ["This story is about pandemics and the Coronavirus.  ", 
+						"A pandemic is where many people in a large area become sick.  ", 
 						"A pandemic is usually caused by a virus."];
+	
+	let sceneTwoText = ["The Coronavirus is a virus that is spreading fast and causing a worldwide pandemic now.\n\n", 
+						"Viruses are so small that it takes an electron microscope to see them.  ", 
+						"People can't see if a virus is near them."];
+	
+	let sceneTwoPic = "assets/images/grumpy-spike.gif";
 						
 	/* typed.js allows you to pause a sentence
 		by inserting a '^' symbol followed by the number of milliseconds to pause
 		E.G. ^500 pauses the typing for a half a second (500ms)
 		 */
 	let sentencePause = "^1000";
-	let sceneOneParagraph = "This story is about pandemics and the Coronavirus.  ";
-	sceneOneParagraph += sentencePause;
-	sceneOneParagraph += "A pandemic is where many people in a large area become sick.  ";
-	sceneOneParagraph += sentencePause;
-	sceneOneParagraph += "A pandemic is usually caused by a virus.";
 	
-	clearParagraph();
-	typeParagraph(sceneOneParagraph);
+	showScene(pictureImage, sceneOnePic, sceneOneText, sentencePause);
 	
 	/** https://www.w3schools.com/js/tryit.asp?filename=tryjs_timing2 */
 	/** https://www.programiz.com/javascript/examples/pass-parameter-setTimeout */
-	setTimeout(showSceneTwo, 30000, pictureImage, sentencePause);
+	setTimeout(showScene, 30000, pictureImage, sceneTwoPic, sceneTwoText, sentencePause);
+	
+}
+
+function showScene(pictureImage, picture, sentences, sentencePause) {
+	pictureImage.src = picture;
+	
+	let sceneParagraph = "";
+	
+	for(let i = 0; i < sentences.length; i++) {
+		sceneParagraph += i === 0 ? "": sentencePause;
+		sceneParagraph += sentences[i];
+		
+	}
+	
+	clearParagraph();
+	typeParagraph(sceneParagraph);
 	
 }
 
