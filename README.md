@@ -15,17 +15,22 @@ This project is deployed to [Github Pages](https://liz-conway.github.io/Portfoli
 2. Go to the Github repository [Social Story Animation github repository](https://github.com/Liz-Conway/Portfolio-2-JS-Short-Story-Animation)
 
 3. In the Github repository, click on the *Settings* menu option.
+
 ![Github Settings](documentation/deploy/deploy-github-settings.png)
 
 4. Scroll down to and select the *Pages* section.
+
 ![Github Pages](documentation/deploy/deploy-github-pages.png)
 
 5. Choose the *main* branch to deploy
+
 ![Select main branch](documentation/deploy/deploy-select-main-branch.png)
 
 6. Save the GitHub Pages selection
+
 ![Save GitHub Pages selection](documentation/deploy/deploy-github-save.png)
 7. After a few minutes the site was deployed.
+
 ![Social Story Animation website deployed](documentation/deploy/deploy-github-deployed.png)
 
 
