@@ -17,8 +17,14 @@ function playAnimation() {
 	
 	let sceneThreeText = ["People are smart.  ", 
 						"Even though they can't see the Coronavirus, they know what to do.  ", 
-						"They use healthy habits and work together to make it harder for the Coronavirus to spread.",
+						"They use healthy habits and work together to make it harder for the Coronavirus to spread.  ",
 						"This helps keep people healthy during the pandemic."];
+	
+	let sceneFourPic = "assets/images/wash-hands.gif";
+	
+	let sceneFourText = ["People wash their hands well and often during a pandemic.  ", 
+						"Adults make sure kids know how to wash their hands well.  ", 
+						"And, adults remind kids to wash their hands a lot."];
 	
 	let sceneOne = [sceneOnePic, sceneOneText];
 	
@@ -26,7 +32,9 @@ function playAnimation() {
 	
 	let sceneThree = [sceneThreePic, sceneThreeText];
 	
-	let scenes = [sceneOne, sceneTwo, sceneThree];
+	let sceneFour = [sceneFourPic, sceneFourText];
+	
+	let scenes = [sceneOne, sceneTwo, sceneThree, sceneFour];
 						
 	/* typed.js allows you to pause a sentence
 		by inserting a '^' symbol followed by the number of milliseconds to pause
