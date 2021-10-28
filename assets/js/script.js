@@ -13,25 +13,28 @@ function playAnimation() {
 	
 	let sceneTwoPic = "assets/images/grumpy-spike.gif";
 	
+	let sceneThreePic = "assets/images/light-bulb.gif";
+	
+	let sceneThreeText = ["People are smart.  ", 
+						"Even though they can't see the Coronavirus, they know what to do.  ", 
+						"They use healthy habits and work together to make it harder for the Coronavirus to spread.",
+						"This helps keep people healthy during the pandemic."];
+	
 	let sceneOne = [sceneOnePic, sceneOneText];
 	
 	let sceneTwo = [sceneTwoPic, sceneTwoText];
 	
-	let scenes = [sceneOne, sceneTwo];
+	let sceneThree = [sceneThreePic, sceneThreeText];
+	
+	let scenes = [sceneOne, sceneTwo, sceneThree];
 						
 	/* typed.js allows you to pause a sentence
 		by inserting a '^' symbol followed by the number of milliseconds to pause
 		E.G. ^500 pauses the typing for a half a second (500ms)
-		 */
+	 */
 	let sentencePause = "^1000";
 	
 	showScenes(scenes, pictureContainer, sentencePause);
-	
-	//showScene(pictureImage, sceneOnePic, sceneOneText, sentencePause);
-	
-	/** https://www.w3schools.com/js/tryit.asp?filename=tryjs_timing2 */
-	/** https://www.programiz.com/javascript/examples/pass-parameter-setTimeout */
-	//setTimeout(showScene, 30000, pictureImage, sceneTwoPic, sceneTwoText, sentencePause);
 	
 }
 
@@ -42,7 +45,13 @@ function showScenes(scenes, pictureContainer, sentencePause) {
 		let time = sceneTime * i;
 		let picture = scenes[i][0];
 		let text = scenes[i][1];
-		setTimeout(showScene, time * i, pictureContainer, picture, text, sentencePause);
+		
+		if(i===0) {
+			time = 0;
+		}
+		/** https://www.w3schools.com/js/tryit.asp?filename=tryjs_timing2 */
+		/** https://www.programiz.com/javascript/examples/pass-parameter-setTimeout */
+		setTimeout(showScene, time, pictureContainer, picture, text, sentencePause);
 	}
 }
 
@@ -62,19 +71,6 @@ function showScene(pictureImage, picture, sentences, sentencePause) {
 	
 }
 
-function showSceneTwo(pictureImage, sentencePause) {
-	pictureImage.src = "assets/images/grumpy-spike.gif";
-	
-	let sceneTwoParagraph = "The Coronavirus is a virus that is spreading fast and causing a worldwide pandemic now.\n\n";
-	sceneTwoParagraph += sentencePause;
-	sceneTwoParagraph += "Viruses are so small that it takes an electron microscope to see them.  ";
-	sceneTwoParagraph += sentencePause;
-	sceneTwoParagraph += "People can't see if a virus is near them.";
-	
-	clearParagraph();
-	typeParagraph(sceneTwoParagraph);
-	
-}
 
 /** Use typed.js to type out the entered text */
 function typeParagraph($text) {
