@@ -44,3 +44,4 @@ This project is deployed to [Github Pages](https://liz-conway.github.io/Portfoli
 |<img src="assets/images/grumpy-spike.gif" alt="grumpy covid virus" width="30" height="30">|Grumpy Covid Virus | tenor.com | https://www.pinterest.fr/pin/313492824066573963/ |
 |<img src="assets/images/world-young-person.gif" alt="young person sitting on world" width="20" height="30">| young person on world | Mercer University | https://den.mercer.edu/students-animations-depict-how-covid-19-impacts-daily-routines/
 | <img src="assets/images/light-bulb.gif" alt="light bulb" width="30" height="30"> |Animated light bulb | animatedimages.org | https://www.animatedimages.org/cat-light-bulb-510.htm
+| <img src="assets/images/wash-hands.gif" alt="washing hands" width="30" height="30"> |Wash Hands | NewYork-Presbyterian | https://healthmatters.nyp.org/tag/soap/
