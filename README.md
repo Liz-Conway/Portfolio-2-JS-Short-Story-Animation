@@ -45,6 +45,19 @@ This project is deployed to [Github Pages](https://liz-conway.github.io/Portfoli
 **Story**: [My Story About
 Pandemics and the Coronavirus](https://carolgraysocialstories.com/wp-content/uploads/2020/03/Pandemics-and-the-Coronavirus.pdf)
 
+### Code
+
+| Name                                      | Owner          | Downloaded and/or adapted from                                                                                                                                                            |
+| ----------------------------------------- | -------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Javascript Progress bar                   | W3 Schools     | [Javascript Progress bar](https://www.w3schools.com/howto/howto_js_progressbar.asp)                                                                                                       |
+| Updating scene number and total scenes    | Code Institute | [Love Maths - Update scores](https://learn.codeinstitute.net/courses/course-v1:CodeInstitute+LM101+2021_T1/courseware/2d651bf3f23e48aeb9b9218871912b2e/8775beaed6ed403d92318845af971b30/) |
+| JS Library to type text                   | Matt Boldt     | [typed.js](https://github.com/mattboldt/typed.js/)                                                                                                                                        |
+| JavaScript Timing functions               | W3 Schools     | [W3 Schools JS Timing](https://www.w3schools.com/js/tryit.asp?filename=tryjs_timing2)                                                                                                     |
+| Passing parameters to JS Timeout function | programiz.com  | [Pass parameter to setTimeout()](https://www.programiz.com/javascript/examples/pass-parameter-setTimeout)                                                                                 |
+| Play audio file in Javascript             | DelftStack     | [Audio in Javascript](https://www.delftstack.com/howto/javascript/play-audio-javascript/)                                                                                                 |
+|             Speech Bubble                 | Dave Alger     |     [Speech Bubble CSS](https://codepen.io/run-time/pen/VNRBJd)                                                                                                                                                                                      |
+|                                           |                |                                                                                                                                                                                           |
+
 ### Pictures
 
 | Picture                    | Name | Owner           | Downloaded and/or adapted from|
