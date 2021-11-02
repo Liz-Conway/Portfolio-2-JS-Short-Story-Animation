@@ -92,24 +92,40 @@ body {
   bottom: -24px;
 }
 
+/*https://www.w3schools.com/howto/howto_js_progressbar.asp */
+#progressWrapper {
+  width: 100%;
+  background-color: grey;
+}
+
+#progressBar {
+  width: 1%;
+  height: 30px;
+  background-color: green;
+}
+
 .storySection {
   display: flex;
   flex-direction: column;
 }
+
 .storyWrapper {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
+
 .storyPicContainer {
   width: 70%;
   height: 75vh;
   display: flex;
   justify-content: center;
 }
+
 .storyBubble {
   width: 25%;
 }
+
 .storyPicture {
   height: 100%;
 }
