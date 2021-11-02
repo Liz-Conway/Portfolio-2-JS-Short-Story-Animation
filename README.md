@@ -2,6 +2,11 @@
 
 # Social Story Animation
 
+## Design Decisions
+### Layout and Visual Impact
+#### Non-image treatment
+* All audio was created using [Speecholo](https://app.blasteronline.com/speechelo/)
+* 
 ## Software Development Process
 ### Documentation  
 - README.md :  Comprehensive overview of the Short Story Animation website detailing how it works, what its features are, the technologies involved and all the design decisions that were made in creating this infographic animation.
@@ -35,6 +40,11 @@ This project is deployed to [Github Pages](https://liz-conway.github.io/Portfoli
 
 
 ## Credits
+### Original Story
+**Owner**: Carol Grey
+**Story**: [My Story About
+Pandemics and the Coronavirus](https://carolgraysocialstories.com/wp-content/uploads/2020/03/Pandemics-and-the-Coronavirus.pdf)
+
 ### Pictures
 
 | Picture                    | Name | Owner           | Downloaded and/or adapted from|
