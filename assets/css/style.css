@@ -8,11 +8,6 @@ body {
   color: #1b2024;
 }
 
-h1 {
-  color: #fd5404;
-  text-shadow: 1px 1px 0px #e64b02, 2px 2px 0px #cc4302, 3px 3px 0px #b33b01, 4px 4px 0px #9a3201, 4px 4px 2px #000;
-}
-
 /* Basic reset */
 *, *::after, *::before {
   text-decoration: none;
@@ -99,6 +94,10 @@ body {
 
 .storySection {
   display: flex;
+  flex-direction: column;
+}
+.storyWrapper {
+  display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
@@ -119,4 +118,13 @@ body {
   width: 25%;
 }
 
+h1 {
+  color: #fd5404;
+  text-shadow: 1px 1px 0px #e64b02, 2px 2px 0px #cc4302, 3px 3px 0px #b33b01, 4px 4px 0px #9a3201, 4px 4px 2px #000;
+}
 
+h2 {
+  margin: 0 auto;
+}
+
+/*# sourceMappingURL=style.css.map */
