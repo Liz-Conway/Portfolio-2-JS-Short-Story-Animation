@@ -5,7 +5,7 @@ function playAnimation() {
 	
 	let sceneOneText = ["This story is about pandemics and the Coronavirus.  ", 
 						"A pandemic is where many people in a large area become sick.  ", 
-						"A pandemic is usually caused by a virus."];
+						"A pandemic is usually caused by a new virus."];
 	
 	/* https://www.delftstack.com/howto/javascript/play-audio-javascript/ */
 	let sceneOneAudio = new Audio("assets/audio/scene1.mp3");
@@ -58,16 +58,23 @@ function showScenes(scenes, pictureContainer) {
 		let text = scenes[i][1];
 		let audio = scenes[i][2];
 		
+		
+		
 		if(i===0) {
-			time = 0;
+			time = 0;	// Play first scene immediately
+			/* Display the total number of scenes */
+			updateSceneTotal(scenes.length);
 		}
 		/** https://www.w3schools.com/js/tryit.asp?filename=tryjs_timing2 */
 		/** https://www.programiz.com/javascript/examples/pass-parameter-setTimeout */
-		setTimeout(showScene, time, pictureContainer, picture, text, audio);
+		setTimeout(showScene, time, pictureContainer, picture, text, audio, i + 1);
 	}
 }
 
-function showScene(pictureImage, picture, sentences, audio) {
+function showScene(pictureImage, picture, sentences, audio, sceneNumber) {
+	/* Display the number of this scene */
+	updateSceneNumber(sceneNumber);
+	
 	/* typed.js allows you to pause a sentence
 		by inserting a '^' symbol followed by the number of milliseconds to pause
 		E.G. ^500 pauses the typing for a half a second (500ms)
@@ -113,4 +120,20 @@ function clearParagraph() {
 	let storyParagraph = document.getElementsByClassName("storyParagraph")[0];
 	
 	storyParagraph.innerHTML = "";
+}
+
+/**
+ *  Updates the HTML Page with the number of this scene
+ */
+function updateSceneNumber(sceneNumber) {
+	let sceneNum = document.getElementById("sceneNumber");
+	sceneNum.innerText = sceneNumber;
+}
+
+/**
+ *  Updates the HTML Page with the total number of scenes
+ */
+function updateSceneTotal(sceneTotal) {
+	let scenes = document.getElementById("sceneTotal");
+	scenes.innerText = sceneTotal;
 }
