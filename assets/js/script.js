@@ -1,3 +1,8 @@
+/*I could not find any way around using global variables
+since these variables need to be accessed by multiple functions*/
+//var currentScene = 0;
+var timer = [];
+
 function playAnimation() {
 	let pictureContainer = document.getElementsByClassName("storyPicture")[0];
 
@@ -58,8 +63,6 @@ function showScenes(scenes, pictureContainer) {
 		let text = scenes[i][1];
 		let audio = scenes[i][2];
 
-
-
 		if (i === 0) {
 			time = 0;	// Play first scene immediately
 			/* Display the total number of scenes */
@@ -67,11 +70,49 @@ function showScenes(scenes, pictureContainer) {
 		}
 		/** https://www.w3schools.com/js/tryit.asp?filename=tryjs_timing2 */
 		/** https://www.programiz.com/javascript/examples/pass-parameter-setTimeout */
-		setTimeout(showScene, time, pictureContainer, picture, text, audio, i + 1, sceneTime);
+		timer[i] = setTimeout(showScene, time, pictureContainer, picture, text, audio, i + 1, sceneTime);
+		
+		//timer[i] = new Timer(showScene, time, pictureContainer, picture, text, audio, i + 1, sceneTime);
+
 	}
 }
 
+/*https://stackoverflow.com/questions/3969475/javascript-pause-settimeout*/
+function Timer(callback, delay) {
+    var args = arguments,
+        self = this,
+        timer, start;
+
+    this.clear = function () {
+        console.log("In Timer::clear function");
+		console.log("timer to clear :  ", timer);
+		console.log("this object :  ", this);
+		console.log("self object :  ", self);
+		console.log("start object : ", start);
+		console.log("this === self : ", this === self);
+		clearTimeout(self);
+    };
+
+    this.pause = function () {
+        console.log("In Timer::pause function");
+		this.clear();
+        delay -= new Date() - start;
+    };
+
+    this.resume = function () {
+        start = new Date();
+        timer = setTimeout(function () {
+            callback.apply(self, Array.prototype.slice.call(args, 2, args.length));
+        }, delay);
+    };
+
+    this.resume();
+}
+
 function showScene(pictureImage, picture, sentences, audio, sceneNumber, sceneTime) {
+	/*Set the currentScene number*/
+	//currentScene = sceneNumber - 1;
+	
 	/* Display the number of this scene */
 	updateSceneNumber(sceneNumber);
 	
@@ -110,7 +151,7 @@ function typeParagraph($text) {
 	*/
 	var typed = new Typed('.storyParagraph', {
 		strings: [$text],
-		typeSpeed: 50,
+		typeSpeed: 45,
 		loop: false,
 		showCursor: false
 	});
@@ -165,3 +206,74 @@ function progress(barTime) {
 		}
 	}
 } 
+
+/**
+ * Function to pause the current scene
+ */
+function pauseScene() {
+	console.log("Attempting to pause the current scene");
+	let sceneNumber = parseInt(document.getElementById("sceneNumber").textContent);
+	console.log("sceneNumber :  ", sceneNumber);
+	let currentScene = sceneNumber - 1;	// Since arrays are zero-based
+	console.log("currentScene :  ", currentScene);
+	
+	console.log("Timer");
+	console.log(timer);
+	console.log("Current Timer");
+	console.log(timer[currentScene]);
+	
+	//timer[currentScene].pause();
+	//timer[currentScene].clear();
+	//clearTimeout(timer[currentScene]);
+	console.log("Scenes to pause :  ", timer.length);
+	for(let i = 0; i < timer.length; i++) {
+		console.log("Clearing timeout :  ", i);
+		clearTimeout(timer[i]);
+	}
+}
+
+/*https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_win_settimeout_cleartimeout2*/
+var c = 0;
+var t;
+var timer_is_on = false;
+var pausedScene = 0;
+
+function timedCount(scene) {
+  document.getElementById("sceneTotal").innerText = scene;
+  pausedScene = scene;
+	if(scene < 9) {
+		t = setTimeout(timedCount, 1000, ++scene);
+	} else {
+		stopCount();
+	}
+}
+
+function startCount() {
+	console.log("Starting");
+	let scene = pausedScene;
+	if (!timer_is_on) {
+		timer_is_on = true;
+		timedCount(scene);
+	}
+}
+
+function stopCount() {
+	console.log("Stopping");
+	clearTimeout(t);
+	timer_is_on = false;
+}
+
+function restartCount() {
+	pausedScene = 0;
+	startCount();
+}
+
+function rewindCount() {
+	pausedScene--;
+	startCount();
+}
+
+function fastForwardCount() {
+	pausedScene++;
+	startCount();
+}
