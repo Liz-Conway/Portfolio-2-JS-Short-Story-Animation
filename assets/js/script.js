@@ -4,7 +4,7 @@ function playAnimation() {
 	let sceneOnePic = "assets/images/spinning-pandemic-globe-large.gif";
 
 	let sceneOneText = ["This story is about pandemics and the Coronavirus.  ",
-		"A pandemic is where many people in a large area become sick.  ",
+		"A pandemic is when many people in a large area become sick.  ",
 		"A pandemic is usually caused by a new virus."];
 
 	/* https://www.delftstack.com/howto/javascript/play-audio-javascript/ */
@@ -23,13 +23,13 @@ function playAnimation() {
 	let sceneThreeText = ["People are smart.  ",
 		"Even though they can't see the Coronavirus, they know what to do.  ",
 		"They use healthy habits and work together to make it harder for the Coronavirus to spread.  ",
-		"This helps keep people healthy during the pandemic."];
+		"This helps to keep people healthy during the pandemic."];
 
 	let sceneThreeAudio = new Audio("assets/audio/scene3.mp3");
 
 	let sceneFourPic = "assets/images/wash-hands.gif";
 
-	let sceneFourText = ["People wash their hands well and often during a pandemic.  ",
+	let sceneFourText = ["People wash their hands really well and often during a pandemic.  ",
 		"Adults make sure kids know how to wash their hands well.  ",
 		"And, adults remind kids to wash their hands a lot."];
 
@@ -50,7 +50,7 @@ function playAnimation() {
 }
 
 function showScenes(scenes, pictureContainer) {
-	let sceneTime = 35000;
+	let sceneTime = 25000;
 
 	for (let i = 0; i < scenes.length; i++) {
 		let time = sceneTime * i;
@@ -102,7 +102,7 @@ function showScene(pictureImage, picture, sentences, audio, sceneNumber, sceneTi
 
 /** Use typed.js to type out the entered text */
 function typeParagraph($text) {
-	/* The first argument is the class of the elment where the text will be typed 
+	/* The first argument is the class of the element where the text will be typed 
 		strings = The text to type
 		typeSpeed = how fast the text types
 		loop = whether the text is typed once (false), or over and over again (true)
@@ -110,7 +110,7 @@ function typeParagraph($text) {
 	*/
 	var typed = new Typed('.storyParagraph', {
 		strings: [$text],
-		typeSpeed: 100,
+		typeSpeed: 50,
 		loop: false,
 		showCursor: false
 	});
