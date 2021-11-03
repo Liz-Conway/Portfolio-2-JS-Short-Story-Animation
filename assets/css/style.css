@@ -97,41 +97,47 @@ body {
   width: 100%;
   background-color: grey;
 }
-
 #progressBar {
   width: 1%;
-  height: 30px;
-  background-color: green;
+  height: 10px;
+  background-color: #dea412;
 }
 
 .storySection {
   display: flex;
   flex-direction: column;
 }
-
 .storyWrapper {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  background-color: grey;
 }
-
 .storyPicContainer {
   width: 70%;
   height: 75vh;
   display: flex;
   justify-content: center;
+  background-color: lightblue;
 }
-
 .storyBubble {
   width: 25%;
+  display: flex;
+  flex-direction: column;
+  background-color: pink;
 }
-
 .storyPicture {
   height: 100%;
 }
 
 .speechEmoji {
   width: 25%;
+  margin-bottom: auto;
+  margin-top: 2rem;
+}
+
+.height75 {
+  height: 75vh;
 }
 
 h1 {
@@ -141,5 +147,41 @@ h1 {
 
 h2 {
   margin: 0 auto;
+}
+
+.btn {
+  text-transform: uppercase;
+  display: inline-block;
+  padding: 1.5rem 4rem;
+  border-radius: 10rem;
+  font-size: 1.6rem;
+  background-color: #4adf80;
+  color: #1b2024;
+  border: 3px solid #1b2024;
+  text-align: center;
+  transition: all 0.2s;
+}
+  .btn:hover {
+    /* Make the button pop up => 3D effect */
+    transform: translateY(-0.5rem);
+    /* Box Shadow X Y Blur Colour */
+    box-shadow: 0 1rem 2rem rgba(27, 32, 36, 0.2);
+}
+  .btn:active {
+    color: #dea412;
+    background-color: #1b2024;
+    /* Make the button appear to be pressed => 3D effect */
+    transform: translateY(-0.1rem);
+    /* Box Shadow X Y Blur Colour */
+    box-shadow: 0 1rem 2rem rgba(27, 32, 36, 0.2);
+}
+  .btn:not(:last-child) {
+    margin-right: 2rem;
+}
+
+.controls {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
 }
 
