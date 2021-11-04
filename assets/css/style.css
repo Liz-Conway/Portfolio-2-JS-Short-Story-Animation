@@ -5,7 +5,7 @@ body {
   font-weight: 600;
   font-size: 1.6rem;
   line-height: 1.7;
-  color: #1b2024;
+  color: #394f49;
 }
 
 /* Basic reset */
@@ -66,7 +66,7 @@ body {
 }
 
 .storyText {
-  background: #4adf80;
+  background: #fffe87;
   position: relative;
   font-family: "Gabriela";
   font-size: 18px;
@@ -74,7 +74,7 @@ body {
   border-radius: 40px;
   padding: 24px;
   text-align: center;
-  color: #1b2024;
+  color: #394f49;
   height: 40vh;
 }
 
@@ -84,9 +84,9 @@ body {
   width: 0px;
   height: 0px;
   position: absolute;
-  border-left: 24px solid #4adf80;
+  border-left: 24px solid #fffe87;
   border-right: 12px solid transparent;
-  border-top: 12px solid #4adf80;
+  border-top: 12px solid #fffe87;
   border-bottom: 20px solid transparent;
   left: 32px;
   bottom: -24px;
@@ -95,12 +95,12 @@ body {
 /*https://www.w3schools.com/howto/howto_js_progressbar.asp */
 #progressWrapper {
   width: 100%;
-  background-color: grey;
+  background-color: #3F612D;
 }
 #progressBar {
   width: 1%;
   height: 10px;
-  background-color: #dea412;
+  background-color: #F3B391;
 }
 
 .storySection {
@@ -111,7 +111,7 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  background-color: #fd5404;
+  background-color: #191970;
 }
 .storyPicContainer {
   width: 70%;
@@ -136,8 +136,8 @@ body {
 }
 
 h1 {
-  color: #fd5404;
-  text-shadow: 1px 1px 0px #e64b02, 2px 2px 0px #cc4302, 3px 3px 0px #b33b01, 4px 4px 0px #9a3201, 4px 4px 2px #000;
+  color: #191970;
+  text-shadow: 1px 1px 0px #14145b, 2px 2px 0px #101046, 3px 3px 0px #0b0b31, 4px 4px 0px #06061d, 4px 4px 2px #000;
 }
 
 h2 {
@@ -150,9 +150,9 @@ h2 {
   padding: 1.5rem 4rem;
   border-radius: 10rem;
   font-size: 1.6rem;
-  background-color: #dea412;
-  color: #1b2024;
-  border: 3px solid #1b2024;
+  background-color: #F3B391;
+  color: #394f49;
+  border: 3px solid #394f49;
   text-align: center;
   transition: all 0.2s;
 }
@@ -160,15 +160,16 @@ h2 {
     /* Make the button pop up => 3D effect */
     transform: translateY(-0.5rem);
     /* Box Shadow X Y Blur Colour */
-    box-shadow: 0 1rem 2rem rgba(27, 32, 36, 0.2);
+    box-shadow: 0 1rem 2rem rgba(57, 79, 73, 0.2);
 }
   .btn:active {
-    color: #dea412;
-    background-color: #1b2024;
+    color: #F3B391;
+    border-color: #3F612D;
+    background-color: #394f49;
     /* Make the button appear to be pressed => 3D effect */
     transform: translateY(-0.1rem);
     /* Box Shadow X Y Blur Colour */
-    box-shadow: 0 1rem 2rem rgba(27, 32, 36, 0.2);
+    box-shadow: 0 1rem 2rem rgba(57, 79, 73, 0.2);
 }
   .btn:not(:last-child) {
     margin-right: 2rem;
@@ -179,3 +180,4 @@ h2 {
   display: flex;
   justify-content: center;
 }
+
