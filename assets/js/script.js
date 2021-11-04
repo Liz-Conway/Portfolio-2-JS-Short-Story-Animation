@@ -236,13 +236,81 @@ function pauseScene() {
 var c = 0;
 var t;
 var timer_is_on = false;
-var pausedScene = 0;
+//var currentScene = 0;
+var scenes;
+var scenesSetUp = false;
+//var pictureContainer;
+
+function setUpScenes() {
+	
+	let sceneOnePic = "assets/images/spinning-pandemic-globe-large.gif";
+
+	let sceneOneText = ["This story is about pandemics and the Coronavirus.  ",
+		"A pandemic is when many people in a large area become sick.  ",
+		"A pandemic is usually caused by a new virus."];
+
+	/* https://www.delftstack.com/howto/javascript/play-audio-javascript/ */
+	let sceneOneAudio = new Audio("assets/audio/scene1.mp3");
+
+	let sceneTwoText = ["The Coronavirus is a virus that is spreading fast and causing a worldwide pandemic now.<br><br>",
+		"Viruses are so small that it takes an electron microscope to see them.  ",
+		"People can't see if a virus is near them."];
+
+	let sceneTwoPic = "assets/images/grumpy-spike.gif";
+
+	let sceneTwoAudio = new Audio("assets/audio/scene2.mp3");
+
+	let sceneThreePic = "assets/images/light-bulb.gif";
+
+	let sceneThreeText = ["People are smart.  ",
+		"Even though they can't see the Coronavirus, they know what to do.  ",
+		"They use healthy habits and work together to make it harder for the Coronavirus to spread.  ",
+		"This helps to keep people healthy during the pandemic."];
+
+	let sceneThreeAudio = new Audio("assets/audio/scene3.mp3");
+
+	let sceneFourPic = "assets/images/wash-hands.gif";
+
+	let sceneFourText = ["People wash their hands really well and often during a pandemic.  ",
+		"Adults make sure kids know how to wash their hands well.  ",
+		"And, adults remind kids to wash their hands a lot."];
+
+	let sceneFourAudio = new Audio("assets/audio/scene4.mp3");
+
+	let sceneOne = [sceneOnePic, sceneOneText, sceneOneAudio];
+
+	let sceneTwo = [sceneTwoPic, sceneTwoText, sceneTwoAudio];
+
+	let sceneThree = [sceneThreePic, sceneThreeText, sceneThreeAudio];
+
+	let sceneFour = [sceneFourPic, sceneFourText, sceneFourAudio];
+
+	scenes = [sceneOne, sceneTwo, sceneThree, sceneFour];
+	scenesSetUp = true;
+}
 
 function timedCount(scene) {
-  document.getElementById("sceneTotal").innerText = scene;
-  pausedScene = scene;
+	let pictureContainer = document.getElementsByClassName("storyPicture")[0];
+	//document.getElementById("sceneTotal").innerText = scene;
+	//currentScene = scene;
+	let sceneTime = 25000;
+	//let time = sceneTime * scene;
+	let time = sceneTime;
+	let picture = scenes[scene][0];
+	let text = scenes[scene][1];
+	let audio = scenes[scene][2];
+
+	if(scene === 0) {
+		//time = 0;	// Play first scene immediately
+		/* Display the total number of scenes */
+		updateSceneTotal(scenes.length);
+	}
+	/** https://www.w3schools.com/js/tryit.asp?filename=tryjs_timing2 */
+	/** https://www.programiz.com/javascript/examples/pass-parameter-setTimeout */
+	//timer[i] = setTimeout(showScene, time, pictureContainer, picture, text, audio, i + 1, sceneTime);
+	showScene(pictureContainer, picture, text, audio, scene + 1, sceneTime);
 	if(scene < 9) {
-		t = setTimeout(timedCount, 1000, ++scene);
+		t = setTimeout(timedCount, time, ++scene);
 	} else {
 		stopCount();
 	}
@@ -250,7 +318,11 @@ function timedCount(scene) {
 
 function startCount() {
 	console.log("Starting");
-	let scene = pausedScene;
+	if(!scenesSetUp || scenes.length === 0) {
+		setUpScenes();
+	}
+	
+	let scene = getCurrentScene();
 	if (!timer_is_on) {
 		timer_is_on = true;
 		timedCount(scene);
@@ -259,21 +331,42 @@ function startCount() {
 
 function stopCount() {
 	console.log("Stopping");
+	/*Pauses all scenes after this one*/
 	clearTimeout(t);
 	timer_is_on = false;
+	pauseRunningScene(getCurrentScene());
+}
+
+function getCurrentScene() {
+	let sceneNumber = parseInt(document.getElementById("sceneNumber").textContent);
+	if(sceneNumber === 0) {
+		sceneNumber++;
+	}
+	return --sceneNumber; 
+}
+
+function pauseRunningScene() {
+	console.log("Scene Number :  ", getCurrentScene());
+	let audio = scenes[getCurrentScene()][2];
+	console.log("Pausing audio");
+	audio.pause();
+	console.log("Audio now paused");
 }
 
 function restartCount() {
+	console.log("Restarting");
 	pausedScene = 0;
 	startCount();
 }
 
 function rewindCount() {
-	pausedScene--;
-	startCount();
+	console.log("Rewinding");
+	currentScene--;
+	//startCount();
 }
 
 function fastForwardCount() {
-	pausedScene++;
-	startCount();
+	console.log("Fast Forwarding");
+	currentScene++;
+	//startCount();
 }
