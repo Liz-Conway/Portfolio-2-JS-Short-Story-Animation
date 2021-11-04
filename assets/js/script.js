@@ -140,17 +140,17 @@ function showScene(pictureImage, picture, sentences, audio, sceneNumber, sceneTi
 	audio.play();
 }
 
-
+var typed;
 /** Use typed.js to type out the entered text */
-function typeParagraph($text) {
+function typeParagraph(text) {
 	/* The first argument is the class of the element where the text will be typed 
 		strings = The text to type
 		typeSpeed = how fast the text types
 		loop = whether the text is typed once (false), or over and over again (true)
 		showCursor = whether to show a typing cursor as text is typed
 	*/
-	var typed = new Typed('.storyParagraph', {
-		strings: [$text],
+	typed = new Typed('.storyParagraph', {
+		strings: [text],
 		typeSpeed: 45,
 		loop: false,
 		showCursor: false
@@ -351,6 +351,9 @@ function pauseRunningScene() {
 	console.log("Pausing audio");
 	audio.pause();
 	console.log("Audio now paused");
+	console.log("Attempting to pause typing");
+	typed.stop();
+	console.log("Typing is paused?");
 }
 
 function restartCount() {
