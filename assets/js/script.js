@@ -132,7 +132,6 @@ function showScene(pictureImage, picture, sentences, audio, sceneNumber, sceneTi
 	for (let i = 0; i < sentences.length; i++) {
 		sceneParagraph += i === 0 ? "" : sentencePause;
 		sceneParagraph += sentences[i];
-
 	}
 
 	clearParagraph();
@@ -317,6 +316,8 @@ function timedCount(scene) {
 }
 
 function startCount() {
+	let paused = isPaused();
+	
 	console.log("Starting");
 	if(!scenesSetUp || scenes.length === 0) {
 		setUpScenes();
@@ -327,6 +328,11 @@ function startCount() {
 		timer_is_on = true;
 		timedCount(scene);
 	}
+	
+	/* Hide Play button & show Pause button*/
+	let pauseButton = document.getElementById("pauseButton");
+	hideAllButtons(); 
+	showButton(pauseButton);
 }
 
 function stopCount() {
@@ -354,6 +360,11 @@ function pauseRunningScene() {
 	console.log("Attempting to pause typing");
 	typed.stop();
 	console.log("Typing is paused?");
+	
+	showAllButtons();
+	let pauseButton = document.getElementById("pauseButton");
+	console.log("Text of pauseButton :  ", pauseButton.innerText);
+	hideButton(pauseButton);
 }
 
 function restartCount() {
@@ -372,4 +383,53 @@ function fastForwardCount() {
 	console.log("Fast Forwarding");
 	currentScene++;
 	//startCount();
+}
+
+
+function hideButton(button) {
+	/* Hide the button */
+	/*https://www.w3schools.com/howto/howto_js_add_class.asp*/
+	button.classList.add("invisible");
+}
+
+function showButton(button) {
+	/* Show the button*/
+	/*https://www.w3schools.com/howto/howto_js_remove_class.asp*/
+	button.classList.remove("invisible");	
+}
+
+function showAllButtons() {
+	let buttons = document.getElementsByTagName("button");
+	
+	for(button of buttons) {
+		/* Show the button*/
+		/*https://www.w3schools.com/howto/howto_js_remove_class.asp*/
+		button.classList.remove("invisible");	
+	}
+}
+
+function hideAllButtons() {
+	let buttons = document.getElementsByTagName("button");
+	
+	for(button of buttons) {
+		/* Hide the button*/
+		/*https://www.w3schools.com/howto/howto_js_add_class.asp*/
+		button.classList.add("invisible");	
+	}
+}
+
+function isButtonVisible(button) {
+	/*https://blog.learnjavascript.online/posts/javascript-has-class/*/
+	return !button.classList.contains("invisible");
+}
+
+/**
+ * If the 'Rewind' button is visible when the user
+ * clicked the 'Play' button
+ * then the Animation had been paused
+ */
+function isPaused() {
+	let rewindButton = document.getElementById("rewindButton");
+	
+	return isButtonVisible(rewindButton);
 }
