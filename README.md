@@ -3,6 +3,14 @@
 # Social Story Animation
 
 ## Design Decisions
+### Colour
+A colour palette was generated from [coolors](https://coolors.co).  The colours generated and used in the Social Story Animation website are:
+* Midnight Blue - #191970
+* Tumbleweed - #F3B391
+* Dark Moss Green - #3F612D
+* Dark Slate Grey - #394F49
+* Canary - #FFFE87
+
 ### Layout and Visual Impact
 #### Non-image treatment
 * All audio was created using [Speecholo](https://app.blasteronline.com/speechelo/)
