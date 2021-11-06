@@ -142,18 +142,22 @@ function showScene(pictureImage, picture, sentences, audio, sceneNumber, sceneTi
 var typed;
 /** Use typed.js to type out the entered text */
 function typeParagraph(text) {
-	/* The first argument is the class of the element where the text will be typed 
-		strings = The text to type
-		typeSpeed = how fast the text types
-		loop = whether the text is typed once (false), or over and over again (true)
-		showCursor = whether to show a typing cursor as text is typed
-	*/
-	typed = new Typed('.storyParagraph', {
-		strings: [text],
-		typeSpeed: 45,
-		loop: false,
-		showCursor: false
-	});
+	if(isPaused()) {
+		typed.start();
+	} else {
+		/* The first argument is the class of the element where the text will be typed 
+			strings = The text to type
+			typeSpeed = how fast the text types
+			loop = whether the text is typed once (false), or over and over again (true)
+			showCursor = whether to show a typing cursor as text is typed
+		*/
+		typed = new Typed('.storyParagraph', {
+			strings: [text],
+			typeSpeed: 45,
+			loop: false,
+			showCursor: false
+		});
+	}
 }
 
 /** Clears the text in the storyParagraph
