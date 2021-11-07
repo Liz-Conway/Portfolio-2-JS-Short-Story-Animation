@@ -1,118 +1,6 @@
 /*I could not find any way around using global variables
 since these variables need to be accessed by multiple functions*/
-//var currentScene = 0;
-var timer = [];
-
-function playAnimation() {
-	let pictureContainer = document.getElementsByClassName("storyPicture")[0];
-
-	let sceneOnePic = "assets/images/spinning-pandemic-globe-large.gif";
-
-	let sceneOneText = ["This story is about pandemics and the Coronavirus.  ",
-		"A pandemic is when many people in a large area become sick.  ",
-		"A pandemic is usually caused by a new virus."];
-
-	/* https://www.delftstack.com/howto/javascript/play-audio-javascript/ */
-	let sceneOneAudio = new Audio("assets/audio/scene1.mp3");
-
-	let sceneTwoText = ["The Coronavirus is a virus that is spreading fast and causing a worldwide pandemic now.<br><br>",
-		"Viruses are so small that it takes an electron microscope to see them.  ",
-		"People can't see if a virus is near them."];
-
-	let sceneTwoPic = "assets/images/grumpy-spike.gif";
-
-	let sceneTwoAudio = new Audio("assets/audio/scene2.mp3");
-
-	let sceneThreePic = "assets/images/light-bulb.gif";
-
-	let sceneThreeText = ["People are smart.  ",
-		"Even though they can't see the Coronavirus, they know what to do.  ",
-		"They use healthy habits and work together to make it harder for the Coronavirus to spread.  ",
-		"This helps to keep people healthy during the pandemic."];
-
-	let sceneThreeAudio = new Audio("assets/audio/scene3.mp3");
-
-	let sceneFourPic = "assets/images/wash-hands.gif";
-
-	let sceneFourText = ["People wash their hands really well and often during a pandemic.  ",
-		"Adults make sure kids know how to wash their hands well.  ",
-		"And, adults remind kids to wash their hands a lot."];
-
-	let sceneFourAudio = new Audio("assets/audio/scene4.mp3");
-
-	let sceneOne = [sceneOnePic, sceneOneText, sceneOneAudio];
-
-	let sceneTwo = [sceneTwoPic, sceneTwoText, sceneTwoAudio];
-
-	let sceneThree = [sceneThreePic, sceneThreeText, sceneThreeAudio];
-
-	let sceneFour = [sceneFourPic, sceneFourText, sceneFourAudio];
-
-	let scenes = [sceneOne, sceneTwo, sceneThree, sceneFour];
-
-	showScenes(scenes, pictureContainer);
-
-}
-
-function showScenes(scenes, pictureContainer) {
-	let sceneTime = 25000;
-
-	for (let i = 0; i < scenes.length; i++) {
-		let time = sceneTime * i;
-		let picture = scenes[i][0];
-		let text = scenes[i][1];
-		let audio = scenes[i][2];
-
-		if (i === 0) {
-			time = 0;	// Play first scene immediately
-			/* Display the total number of scenes */
-			updateSceneTotal(scenes.length);
-		}
-		/** https://www.w3schools.com/js/tryit.asp?filename=tryjs_timing2 */
-		/** https://www.programiz.com/javascript/examples/pass-parameter-setTimeout */
-		timer[i] = setTimeout(showScene, time, pictureContainer, picture, text, audio, i + 1, sceneTime);
-		
-		//timer[i] = new Timer(showScene, time, pictureContainer, picture, text, audio, i + 1, sceneTime);
-
-	}
-}
-
-/*https://stackoverflow.com/questions/3969475/javascript-pause-settimeout*/
-function Timer(callback, delay) {
-    var args = arguments,
-        self = this,
-        timer, start;
-
-    this.clear = function () {
-        console.log("In Timer::clear function");
-		console.log("timer to clear :  ", timer);
-		console.log("this object :  ", this);
-		console.log("self object :  ", self);
-		console.log("start object : ", start);
-		console.log("this === self : ", this === self);
-		clearTimeout(self);
-    };
-
-    this.pause = function () {
-        console.log("In Timer::pause function");
-		this.clear();
-        delay -= new Date() - start;
-    };
-
-    this.resume = function () {
-        start = new Date();
-        timer = setTimeout(function () {
-            callback.apply(self, Array.prototype.slice.call(args, 2, args.length));
-        }, delay);
-    };
-
-    this.resume();
-}
-
 function showScene(pictureImage, picture, sentences, audio, sceneNumber) {
-	/*Set the currentScene number*/
-	//currentScene = sceneNumber - 1;
-	
 	/* Display the number of this scene */
 	updateSceneNumber(sceneNumber);
 	
@@ -321,7 +209,23 @@ function timedCount(scene) {
 function getSceneTime() {
 	let sceneText = document.getElementById("sceneTime").innerText;
 	let sceneTime = parseInt(sceneText);
-	console.log("getSceneTime()::  ", sceneTime); 
+	/* If the progress bar is not at 1%
+	 * this means the scene has been paused midway through
+	 * Since the progress bar goes from 1% to 100%
+	 * We can use this to calculate the remaining time for this scenario
+	 */
+	let progressBar = document.getElementById("progressBar");
+	let progress = progressBar.style.width;	// E.G. 24%
+	/* Remove the '%' last character */
+	progress = removeLastCharacter(progress);
+	/* Convert to a number */
+	progress = parseInt(progress);
+	console.log("getSceneTime()::  ", sceneTime);
+	console.log("getSceneTime():: progress bar width :  ", progress);
+	/* Progress bar is not at the start or the end, i.e. midway during the scene */
+	if(!isNaN(progress) && progress < 99) {
+		sceneTime = calculateRemainingTime(sceneTime, progress);
+	} 
 	return sceneTime;
 }
 
@@ -362,18 +266,12 @@ function getCurrentScene() {
 }
 
 function pauseRunningScene() {
-	console.log("Scene Number :  ", getCurrentScene());
 	let audio = scenes[getCurrentScene()][2];
-	console.log("Pausing audio");
 	audio.pause();
-	console.log("Audio now paused");
-	console.log("Attempting to pause typing");
 	typed.stop();
-	console.log("Typing is paused?");
 	
 	showAllButtons();
 	let pauseButton = document.getElementById("pauseButton");
-	console.log("Text of pauseButton :  ", pauseButton.innerText);
 	hideButton(pauseButton);
 }
 
@@ -442,4 +340,26 @@ function isPaused() {
 	let rewindButton = document.getElementById("rewindButton");
 	
 	return isButtonVisible(rewindButton);
+}
+
+/**
+ * Manipulate a String to remove the last character
+ */
+function removeLastCharacter(fullString) {
+/*https://herewecode.io/blog/remove-last-character-string-javascript/*/
+	return fullString.slice(0, -1);	
+}
+
+/**
+ * Calculate the remaining time for a scene
+ * Based on overall time (ms) and the percentage already played
+ */
+function calculateRemainingTime(sceneTime, playedPercentage) {
+	/*E.G. sceneTime = 25000ms (25 seconds)
+	     playedPercentage = 24
+		playedTime = 25000 * 24/100 = 6,000 (Scene has been playing for 6 seconds)
+		remainingTime = 25000 - 6000 = 19000 (19 seconds left to play)*/
+	let playedTime = sceneTime * playedPercentage / 100;
+	let remainingTime = sceneTime - playedTime;
+	return remainingTime;
 }
