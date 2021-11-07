@@ -109,7 +109,7 @@ function Timer(callback, delay) {
     this.resume();
 }
 
-function showScene(pictureImage, picture, sentences, audio, sceneNumber, sceneTime) {
+function showScene(pictureImage, picture, sentences, audio, sceneNumber) {
 	/*Set the currentScene number*/
 	//currentScene = sceneNumber - 1;
 	
@@ -117,7 +117,7 @@ function showScene(pictureImage, picture, sentences, audio, sceneNumber, sceneTi
 	updateSceneNumber(sceneNumber);
 	
 	/*Start running the progress bar*/
-	progress(sceneTime);
+	progress(getSceneTime());
 
 	/* typed.js allows you to pause a sentence
 		by inserting a '^' symbol followed by the number of milliseconds to pause
@@ -294,29 +294,31 @@ function setUpScenes() {
 
 function timedCount(scene) {
 	let pictureContainer = document.getElementsByClassName("storyPicture")[0];
-	//document.getElementById("sceneTotal").innerText = scene;
-	//currentScene = scene;
-	let sceneTime = 25000;
-	//let time = sceneTime * scene;
-	let time = sceneTime;
+	let sceneTime = getSceneTime();
 	let picture = scenes[scene][0];
 	let text = scenes[scene][1];
 	let audio = scenes[scene][2];
 
 	if(scene === 0) {
-		//time = 0;	// Play first scene immediately
 		/* Display the total number of scenes */
 		updateSceneTotal(scenes.length);
 	}
+	
 	/** https://www.w3schools.com/js/tryit.asp?filename=tryjs_timing2 */
 	/** https://www.programiz.com/javascript/examples/pass-parameter-setTimeout */
-	//timer[i] = setTimeout(showScene, time, pictureContainer, picture, text, audio, i + 1, sceneTime);
-	showScene(pictureContainer, picture, text, audio, scene + 1, sceneTime);
+	showScene(pictureContainer, picture, text, audio, scene + 1);
 	if(scene < 9) {
-		t = setTimeout(timedCount, time, ++scene);
+		t = setTimeout(timedCount, sceneTime, ++scene);
 	} else {
 		stopCount();
 	}
+}
+
+function getSceneTime() {
+	let sceneText = document.getElementById("sceneTime").innerText;
+	let sceneTime = parseInt(sceneText);
+	console.log("getSceneTime()::  ", sceneTime); 
+	return sceneTime;
 }
 
 function startCount() {
