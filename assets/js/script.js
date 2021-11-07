@@ -117,7 +117,9 @@ function showScene(pictureImage, picture, sentences, audio, sceneNumber) {
 	updateSceneNumber(sceneNumber);
 	
 	/*Start running the progress bar*/
-	progress(getSceneTime());
+	if(!isPaused()) {
+		progress(getSceneTime());
+	}
 
 	/* typed.js allows you to pause a sentence
 		by inserting a '^' symbol followed by the number of milliseconds to pause
@@ -194,7 +196,7 @@ function progress(barTime) {
 	let i = 0;
 	if (i == 0) {
 		i = 1;
-		let elem = document.getElementById("progressBar");
+		let progressBar = document.getElementById("progressBar");
 		let width = 1;
 		let id = setInterval(frame, barTime/100);
 		
@@ -203,8 +205,10 @@ function progress(barTime) {
 				clearInterval(id);
 				i = 0;
 			} else {
-				width++;
-				elem.style.width = width + "%";
+				if(!isPaused()) {
+					width++;
+					progressBar.style.width = width + "%";
+				}
 			}
 		}
 	}
