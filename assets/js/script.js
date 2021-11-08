@@ -32,7 +32,9 @@ function showScene(pictureImage, picture, sentences, audio, sceneNumber) {
 var typed;
 /** Use typed.js to type out the entered text */
 function typeParagraph(text) {
-	if(isPaused()) {
+	let status = getStatus();
+	if(isPaused() && status !== "Restarting") {
+		console.log("Unpausing typing");
 		typed.start();
 	} else {
 		/* The first argument is the class of the element where the text will be typed 
@@ -220,8 +222,8 @@ function getSceneTime() {
 	progress = removeLastCharacter(progress);
 	/* Convert to a number */
 	progress = parseInt(progress);
-	console.log("getSceneTime()::  ", sceneTime);
-	console.log("getSceneTime():: progress bar width :  ", progress);
+	//console.log("getSceneTime()::  ", sceneTime);
+	//console.log("getSceneTime():: progress bar width :  ", progress);
 	/* Progress bar is not at the start or the end, i.e. midway during the scene */
 	if(!isNaN(progress) && progress < 99) {
 		sceneTime = calculateRemainingTime(sceneTime, progress);
@@ -277,8 +279,16 @@ function pauseRunningScene() {
 
 function restartCount() {
 	console.log("Restarting");
-	pausedScene = 0;
+	setStatus("Restarting");
+	resetTyping();
+	resetCurrentScene();
+	resetAudio();
+	resetProgressBar();
 	startCount();
+	hideAllButtons();
+	let pauseButton = document.getElementById("pauseButton");
+	showButton(pauseButton);
+	//timerCount(0);
 }
 
 function rewindCount() {
@@ -362,4 +372,39 @@ function calculateRemainingTime(sceneTime, playedPercentage) {
 	let playedTime = sceneTime * playedPercentage / 100;
 	let remainingTime = sceneTime - playedTime;
 	return remainingTime;
+}
+
+function resetProgressBar() {
+	let progressBar = document.getElementById("progressBar");
+	progressBar.style.width = "1%";
+}
+
+function resetAudio() {
+	/*https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/currentTime*/
+	/*Reset the audio to the beginning*/
+	for(let i = 0; i < scenes.length; i++) {
+		let audio = scenes[i][2];
+		audio.currentTime = 0;
+	}
+}
+
+function resetCurrentScene() {
+	let currentScene = document.getElementById("sceneNumber");
+	currentScene.innerText = 1;
+	
+}
+
+function resetTyping() {
+	clearParagraph();
+	typed.reset();
+}
+
+function setStatus(newStatus) {
+	let status = document.getElementById("status");
+	status.innerText = newStatus;
+}
+
+function getStatus() {
+	let status = document.getElementById("status");
+	return status.innerText;
 }
