@@ -83,18 +83,24 @@ function updateSceneTotal(sceneTotal) {
  * for this scene
  */
 function progress(barTime) {
-	let i = 0;
-	if (i == 0) {
-		i = 1;
+	let running = false;
+	if (!running) {
+		running = true;
 		let progressBar = document.getElementById("progressBar");
 		let width = 1;
 		let id = setInterval(frame, barTime/100);
 		
 		function frame() {
-			if (width >= 100) {
+			if(getStatus() == "Restarting") {
+				width = 1;
+				setStatus("");
+				console.log("ProgressBar:Restarting::  ");
+				console.log("isPaused() ::  ", isPaused());
+			} else  if(width >= 100) {
 				clearInterval(id);
-				i = 0;
+				running = false;
 			} else {
+					console.log("Running Progress bar")
 				if(!isPaused()) {
 					width++;
 					progressBar.style.width = width + "%";
