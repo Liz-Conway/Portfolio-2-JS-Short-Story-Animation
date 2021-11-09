@@ -55,17 +55,21 @@ Pandemics and the Coronavirus](https://carolgraysocialstories.com/wp-content/upl
 
 ### Code
 
-| Name                                      | Owner          | Downloaded and/or adapted from                                                                                                                                                            |
-| ----------------------------------------- | -------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Javascript Progress bar                   | W3 Schools     | [Javascript Progress bar](https://www.w3schools.com/howto/howto_js_progressbar.asp)                                                                                                       |
-| Updating scene number and total scenes    | Code Institute | [Love Maths - Update scores](https://learn.codeinstitute.net/courses/course-v1:CodeInstitute+LM101+2021_T1/courseware/2d651bf3f23e48aeb9b9218871912b2e/8775beaed6ed403d92318845af971b30/) |
-| JS Library to type text                   | Matt Boldt     | [typed.js](https://github.com/mattboldt/typed.js/)                                                                                                                                        |
-| JavaScript Timing functions               | W3 Schools     | [W3 Schools JS Timing](https://www.w3schools.com/js/tryit.asp?filename=tryjs_timing2)                                                                                                     |
-| Passing parameters to JS Timeout function | programiz.com  | [Pass parameter to setTimeout()](https://www.programiz.com/javascript/examples/pass-parameter-setTimeout)                                                                                 |
-| Play audio file in Javascript             | DelftStack     | [Audio in Javascript](https://www.delftstack.com/howto/javascript/play-audio-javascript/)                                                                                                 |
-| Speech Bubble                             | Dave Alger     | [Speech Bubble CSS](https://codepen.io/run-time/pen/VNRBJd)                                                                                                                               |
-|    Code for running multiple timeouts     | W3 Schools     |      [Javascript timeout run forever able to stop](https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_win_settimeout_cleartimeout2)                                                                                                                                                                                     |
-|                                           |                |                                                                                                                                                                                           |
+| Name                                                  | Owner                 | Downloaded and/or adapted from |
+| ----------------------------------------------------- | --------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Javascript Progress bar                               | W3 Schools            |Javascript Progress bar](https://www.w3schools.com/howto/howto_js_progressbar.asp) |
+| Updating scene number and total scenes                | Code Institute        |[Love Maths - Update scores](https://learn.codeinstitute.net/courses/course-v1:CodeInstitute+LM101+2021_T1/courseware/2d651bf3f23e48aeb9b9218871912b2e/8775beaed6ed403d92318845af971b30/)|
+| JS Library to type text                               | Matt Boldt            | [typed.js](https://github.com/mattboldt/typed.js/)|
+| JavaScript Timing functions                           | W3 Schools            |[W3 Schools JS Timing](https://www.w3schools.com/js/tryit.asp?filename=tryjs_timing2)|
+| Passing parameters to JS Timeout function             | programiz.com         | [Pass parameter to setTimeout()](https://www.programiz.com/javascript/examples/pass-parameter-setTimeout)|
+| Play audio file in Javascript                         | DelftStack            | [Audio in Javascript](https://www.delftstack.com/howto/javascript/play-audio-javascript/)|
+| Speech Bubble                                         | Dave Alger            | [Speech Bubble CSS](https://codepen.io/run-time/pen/VNRBJd)|
+| Code for running multiple timeouts                    | W3 Schools            |Javascript timeout run forever able to stop](https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_win_settimeout_cleartimeout2) |
+| Javascript to Add class to HTML element               | W3 Schools            | [Add class to HTML element](https://www.w3schools.com/howto/howto_js_add_class.asp)|
+| Javascript to Remove class from HTML element          | W3 Schools            | [Remove class from HTML element](https://www.w3schools.com/howto/howto_js_rempve_class.asp)|
+| Check if a HTML element has a particular class        | Learn Javascript Blog | [Check class on HTML element](https://blog.learnjavascript.online/posts/javascript-has-class/)|
+| Javascript to remove the last character from a string | HereWeCode            | [Remove last character](https://herewecode.io/blog/remove-last-character-string-javascript/)|
+|             Reset audio to beginning of track         |Mozilla Developer Network|[Reset Audio](https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/currentTime)|
 
 ### Pictures
 
@@ -75,5 +79,8 @@ Pandemics and the Coronavirus](https://carolgraysocialstories.com/wp-content/upl
 |<img src="assets/images/healthy-emoji.png" alt="healthy emoji" width="30" height="30">|Healthy Emoji|[Ann H](https://www.pexels.com/@ann-h-45017)|[Pexels](https://www.pexels.com/photo/man-people-blur-ball-7313320/)|
 |<img src="assets/images/grumpy-spike.gif" alt="grumpy covid virus" width="30" height="30">|Grumpy Covid Virus | tenor.com | https://www.pinterest.fr/pin/313492824066573963/ |
 |<img src="assets/images/world-young-person.gif" alt="young person sitting on world" width="20" height="30">| young person on world | Mercer University | https://den.mercer.edu/students-animations-depict-how-covid-19-impacts-daily-routines/
-| <img src="assets/images/light-bulb.gif" alt="light bulb" width="30" height="30"> |Animated light bulb | animatedimages.org | https://www.animatedimages.org/cat-light-bulb-510.htm
-| <img src="assets/images/wash-hands.gif" alt="washing hands" width="30" height="30"> |Wash Hands | NewYork-Presbyterian | https://healthmatters.nyp.org/tag/soap/
+| <img src="assets/images/light-bulb.gif" alt="light bulb" width="30" height="30"> |Animated light bulb | animatedimages.org | https://www.animatedimages.org/cat-light-bulb-510.htm |
+| <img src="assets/images/wash-hands.gif" alt="washing hands" width="30" height="30"> |Wash Hands | NewYork-Presbyterian | https://healthmatters.nyp.org/tag/soap/ |
+| <img src="assets/images/speaker.png" alt="speaker" width="30" height="30"> |Speaker | icons8.com | https://img.icons8.com/ios/2x/speaker.png |
+| <img src="assets/images/speaker-muted.png" alt="muted speaker" width="30" height="30"> |Muted Speaker | icons8.com | https://img.icons8.com/ios/2x/speaker.png |
+
