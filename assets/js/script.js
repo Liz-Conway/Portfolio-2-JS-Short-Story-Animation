@@ -1,3 +1,50 @@
+/*
+ * Only let the user play the animation once the DOM has finished loading
+ * Wait for the DOM to finish loading
+*/
+document.addEventListener("DOMContentLoaded", pageLoaded());
+
+function pageLoaded() {
+	setUpScenes();
+	/* Initially the only option is to play the animation */
+	hideAllButtons();
+	let playButton = document.getElementById("playButton");
+	showButton(playButton);
+	
+	/* Set the function to be called when the speaker image is clicked */
+	let speakerImage = document.getElementById("speaker");
+	speakerImage.addEventListener("click", toggleMute);
+}
+
+/**
+ * If sound is unmuted then mute the sound
+ * If sound is already muted then unmute it
+ */
+function toggleMute() {
+	let soundImage = "assets/images/speaker.png";
+	let mutedImage = "assets/images/speaker-muted.png";
+	
+	console.log("toggleMute()");
+	console.log("this ::  ", this);
+	
+	/* this refers to the speakerImage element */
+	let image = this.getAttribute("src");
+	console.log("Image ::  ", image);
+	if(image === soundImage) {
+		/* Speaker image so we must mute the sound, 
+			then change to the muted image */
+		for(scene of scenes) {
+			/* Audio is stored in scene[2] */
+			console.log("Scene::  ", scene[0]);
+			/*https://www.developphp.com/video/JavaScript/Audio-Play-Pause-Mute-Buttons-Tutorial*/
+			scene[2].muted = true;
+		}
+		
+		this.setAttribute('src', mutedImage);
+	}
+}
+
+
 /*I could not find any way around using global variables
 since these variables need to be accessed by multiple functions*/
 function showScene(pictureImage, picture, sentences, audio, sceneNumber) {
