@@ -135,7 +135,6 @@ function pauseScene() {
 	}
 }
 
-/*https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_win_settimeout_cleartimeout2*/
 var c = 0;
 var t;
 var timer_is_on = false;
@@ -192,6 +191,7 @@ function setUpScenes() {
 	scenesSetUp = true;
 }
 
+/*https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_win_settimeout_cleartimeout2*/
 function timedCount(scene) {
 	let pictureContainer = document.getElementsByClassName("storyPicture")[0];
 	let sceneTime = getSceneTime();
