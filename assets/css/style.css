@@ -175,10 +175,22 @@ h2 {
     margin-right: 2rem;
 }
 
-.controls {
-  margin-top: 1rem;
+#buttons {
   display: flex;
   justify-content: center;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+#controls {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: row;
+}
+
+#speaker {
+  width: 5rem;
+  height: 5rem;
 }
 
 .invisible {
