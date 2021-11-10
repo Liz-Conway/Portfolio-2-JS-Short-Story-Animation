@@ -6,14 +6,30 @@ document.addEventListener("DOMContentLoaded", pageLoaded());
 
 function pageLoaded() {
 	setUpScenes();
+	
+	let playButton = document.getElementById("playButton");
+	console.log("Play button :  ", playButton);
+	let pauseButton = document.getElementById("pauseButton");
+	let restartButton = document.getElementById("restartButton");
+	let rewindButton = document.getElementById("rewindButton");
+	let fastForwardButton = document.getElementById("fastForwardButton");
+	
 	/* Initially the only option is to play the animation */
 	hideAllButtons();
-	let playButton = document.getElementById("playButton");
 	showButton(playButton);
 	
 	/* Set the function to be called when the speaker image is clicked */
 	let speakerImage = document.getElementById("speaker");
 	speakerImage.addEventListener("click", toggleMute);
+	
+	/* Set event listeners for all the buttons
+	 * When the button is clicked this function will be called.
+	 */
+	playButton.addEventListener("click", startCount);
+	pauseButton.addEventListener("click", stopCount);
+	restartButton.addEventListener("click", restartCount);
+	rewindButton.addEventListener("click", rewindCount);
+	fastForwardButton.addEventListener("click", fastForwardCount);
 }
 
 /**
@@ -296,6 +312,7 @@ function getSceneTime() {
 }
 
 function startCount() {
+	console.log("Start Animation");
 	let paused = isPaused();
 	
 	console.log("Starting");
@@ -406,14 +423,14 @@ function isButtonVisible(button) {
 }
 
 /**
- * If the 'Rewind' button is visible when the user
+ * If the 'Restart' button is visible when the user
  * clicked the 'Play' button
  * then the Animation had been paused
  */
 function isPaused() {
-	let rewindButton = document.getElementById("rewindButton");
+	let restartButton = document.getElementById("restartButton");
 	
-	return isButtonVisible(rewindButton);
+	return isButtonVisible(restartButton);
 }
 
 /**
