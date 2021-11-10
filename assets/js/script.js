@@ -109,6 +109,7 @@ function typeParagraph(text) {
 	let status = getStatus();
 	if(isPaused() && status !== "Restarting") {
 		console.log("Unpausing typing");
+		console.log("Status :  ", status);
 		typed.start();
 	} else {
 		/* The first argument is the class of the element where the text will be typed 
@@ -382,6 +383,7 @@ function restartAnimation() {
 
 function rewindAnimation() {
 	console.log("Rewinding");
+	setStatus("Restarting");
 	resetTyping();
 	/*Change the scene number on the page to current scene number -1
 	Since the current Index is one less than the current scene number
