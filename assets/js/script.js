@@ -266,7 +266,7 @@ function setUpScenes() {
 }
 
 /*https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_win_settimeout_cleartimeout2*/
-function timedCount(scene) {
+function timedAnimation(scene) {
 	let pictureContainer = document.getElementsByClassName("storyPicture")[0];
 	let sceneTime = getSceneTime();
 	let picture = scenes[scene][0];
@@ -282,7 +282,7 @@ function timedCount(scene) {
 	/** https://www.programiz.com/javascript/examples/pass-parameter-setTimeout */
 	showScene(pictureContainer, picture, text, audio, scene + 1);
 	if(scene < 9) {
-		t = setTimeout(timedCount, sceneTime, ++scene);
+		t = setTimeout(timedAnimation, sceneTime, ++scene);
 	} else {
 		stopAnimation();
 	}
@@ -320,10 +320,10 @@ function playAnimation() {
 		setUpScenes();
 	}
 	
-	let scene = getCurrentScene();
+	let scene = getCurrentIndex();
 	if (!timer_is_on) {
 		timer_is_on = true;
-		timedCount(scene);
+		timedAnimation(scene);
 	}
 	
 	/* Hide Play button & show Pause button*/
@@ -337,10 +337,10 @@ function stopAnimation() {
 	/*Pauses all scenes after this one*/
 	clearTimeout(t);
 	timer_is_on = false;
-	pauseRunningScene(getCurrentScene());
+	pauseRunningScene(getCurrentIndex());
 }
 
-function getCurrentScene() {
+function getCurrentIndex() {
 	let sceneNumber = parseInt(document.getElementById("sceneNumber").textContent);
 	if(sceneNumber === 0) {
 		sceneNumber++;
@@ -349,20 +349,28 @@ function getCurrentScene() {
 }
 
 function pauseRunningScene() {
-	let audio = scenes[getCurrentScene()][2];
+	let audio = scenes[getCurrentIndex()][2];
 	audio.pause();
 	typed.stop();
 	
 	showAllButtons();
 	let pauseButton = document.getElementById("pauseButton");
 	hideButton(pauseButton);
+	
+	/* Cannot rewind the first scene - use restart instead
+	 First scene has index of 0*/
+	if(getCurrentIndex() === 0) {
+		let rewindButton = document.getElementById("rewindButton");
+		hideButton(rewindButton);
+	}
+	
 }
 
 function restartAnimation() {
 	console.log("Restarting");
 	setStatus("Restarting");
 	resetTyping();
-	resetCurrentScene();
+	resetCurrentScene(1);
 	resetAudio();
 	resetProgressBar();
 	playAnimation();
@@ -374,13 +382,23 @@ function restartAnimation() {
 
 function rewindAnimation() {
 	console.log("Rewinding");
-	currentScene--;
-	//playAnimation();
+	resetTyping();
+	/*Change the scene number on the page to current scene number -1
+	Since the current Index is one less than the current scene number
+	we will use currentIndex instead.
+	The 'playAnimation' function uses the current scene number on the page
+	to determine where to play from.*/
+	resetCurrentScene(getCurrentIndex());
+	resetAudio();
+	resetProgressBar();
+	playAnimation();
+	hideAllButtons();
+	let pauseButton = document.getElementById("pauseButton");
+	showButton(pauseButton);
 }
 
 function fastForwardAnimation() {
 	console.log("Fast Forwarding");
-	currentScene++;
 	//playAnimation();
 }
 
@@ -469,9 +487,9 @@ function resetAudio() {
 	}
 }
 
-function resetCurrentScene() {
+function resetCurrentScene(sceneNumber) {
 	let currentScene = document.getElementById("sceneNumber");
-	currentScene.innerText = 1;
+	currentScene.innerText = sceneNumber;
 	
 }
 
