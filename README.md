@@ -55,21 +55,24 @@ Pandemics and the Coronavirus](https://carolgraysocialstories.com/wp-content/upl
 
 ### Code
 
-| Name                                                  | Owner                 | Downloaded and/or adapted from |
-| ----------------------------------------------------- | --------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Javascript Progress bar                               | W3 Schools            |Javascript Progress bar](https://www.w3schools.com/howto/howto_js_progressbar.asp) |
-| Updating scene number and total scenes                | Code Institute        |[Love Maths - Update scores](https://learn.codeinstitute.net/courses/course-v1:CodeInstitute+LM101+2021_T1/courseware/2d651bf3f23e48aeb9b9218871912b2e/8775beaed6ed403d92318845af971b30/)|
-| JS Library to type text                               | Matt Boldt            | [typed.js](https://github.com/mattboldt/typed.js/)|
-| JavaScript Timing functions                           | W3 Schools            |[W3 Schools JS Timing](https://www.w3schools.com/js/tryit.asp?filename=tryjs_timing2)|
-| Passing parameters to JS Timeout function             | programiz.com         | [Pass parameter to setTimeout()](https://www.programiz.com/javascript/examples/pass-parameter-setTimeout)|
-| Play audio file in Javascript                         | DelftStack            | [Audio in Javascript](https://www.delftstack.com/howto/javascript/play-audio-javascript/)|
-| Speech Bubble                                         | Dave Alger            | [Speech Bubble CSS](https://codepen.io/run-time/pen/VNRBJd)|
-| Code for running multiple timeouts                    | W3 Schools            |Javascript timeout run forever able to stop](https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_win_settimeout_cleartimeout2) |
-| Javascript to Add class to HTML element               | W3 Schools            | [Add class to HTML element](https://www.w3schools.com/howto/howto_js_add_class.asp)|
-| Javascript to Remove class from HTML element          | W3 Schools            | [Remove class from HTML element](https://www.w3schools.com/howto/howto_js_rempve_class.asp)|
-| Check if a HTML element has a particular class        | Learn Javascript Blog | [Check class on HTML element](https://blog.learnjavascript.online/posts/javascript-has-class/)|
-| Javascript to remove the last character from a string | HereWeCode            | [Remove last character](https://herewecode.io/blog/remove-last-character-string-javascript/)|
-|             Reset audio to beginning of track         |Mozilla Developer Network|[Reset Audio](https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/currentTime)|
+| Name                                                   | Owner                     | Downloaded and/or adapted from                                                                                                                                                             |
+| ------------------------------------------------------ | ------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Javascript Progress bar                                | W3 Schools                | Javascript Progress bar](https://www.w3schools.com/howto/howto_js_progressbar.asp)                                                                                                         |
+| Updating scene number and total scenes                 | Code Institute            | [Love Maths - Update scores](https://learn.codeinstitute.net/courses/course-v1:CodeInstitute+LM101+2021_T1/courseware/2d651bf3f23e48aeb9b9218871912b2e/8775beaed6ed403d92318845af971b30/)  |
+| JS Library to type text                                | Matt Boldt                | [typed.js](https://github.com/mattboldt/typed.js/)                                                                                                                                         |
+| JavaScript Timing functions                            | W3 Schools                | [W3 Schools JS Timing](https://www.w3schools.com/js/tryit.asp?filename=tryjs_timing2)                                                                                                      |
+| Passing parameters to JS Timeout function              | programiz.com             | [Pass parameter to setTimeout()](https://www.programiz.com/javascript/examples/pass-parameter-setTimeout)                                                                                  |
+| Play audio file in Javascript                          | DelftStack                | [Audio in Javascript](https://www.delftstack.com/howto/javascript/play-audio-javascript/)                                                                                                  |
+| Speech Bubble                                          | Dave Alger                | [Speech Bubble CSS](https://codepen.io/run-time/pen/VNRBJd)                                                                                                                                |
+| Code for running multiple timeouts                     | W3 Schools                | Javascript timeout run forever able to stop](https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_win_settimeout_cleartimeout2)                                                     |
+| Javascript to Add class to HTML element                | W3 Schools                | [Add class to HTML element](https://www.w3schools.com/howto/howto_js_add_class.asp)                                                                                                        |
+| Javascript to Remove class from HTML element           | W3 Schools                | [Remove class from HTML element](https://www.w3schools.com/howto/howto_js_rempve_class.asp)                                                                                                |
+| Check if a HTML element has a particular class         | Learn Javascript Blog     | [Check class on HTML element](https://blog.learnjavascript.online/posts/javascript-has-class/)                                                                                             |
+| Javascript to remove the last character from a string  | HereWeCode                | [Remove last character](https://herewecode.io/blog/remove-last-character-string-javascript/)                                                                                               |
+| Reset audio to beginning of track                      | Mozilla Developer Network | [Reset Audio](https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/currentTime)                                                                                               |
+| Javascript code to run after page has finished loading | Code Institute            | [DOM loaded code](https://learn.codeinstitute.net/courses/course-v1:CodeInstitute+LM101+2021_T1/courseware/2d651bf3f23e48aeb9b9218871912b2e/78f3c10a937c4fe09640c7c0098d16bd/)             |
+| Javascript - Event listeners for buttons               | Code Institute            | [Event listeners for buttons](https://learn.codeinstitute.net/courses/course-v1:CodeInstitute+LM101+2021_T1/courseware/2d651bf3f23e48aeb9b9218871912b2e/78f3c10a937c4fe09640c7c0098d16bd/) |
+|   Javascript - Mute & Unmute audio                     |    DevelopPHP.com         |            [(Un)mute audio](https://www.developphp.com/video/JavaScript/Audio-Play-Pause-Mute-Buttons-Tutorial)|
 
 ### Pictures
 
