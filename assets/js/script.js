@@ -41,6 +41,17 @@ function toggleMute() {
 		}
 		
 		this.setAttribute('src', mutedImage);
+	} else {
+		/* Sound is already muted, so unmute it
+			then change to the unmuted image */
+		for(scene of scenes) {
+			/* Audio is stored in scene[2] */
+			console.log("Scene::  ", scene[0]);
+			/*https://www.developphp.com/video/JavaScript/Audio-Play-Pause-Mute-Buttons-Tutorial*/
+			scene[2].muted = false;
+		}
+		
+		this.setAttribute('src', soundImage);
 	}
 }
 
