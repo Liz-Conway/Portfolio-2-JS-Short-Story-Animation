@@ -25,11 +25,11 @@ function pageLoaded() {
 	/* Set event listeners for all the buttons
 	 * When the button is clicked this function will be called.
 	 */
-	playButton.addEventListener("click", startCount);
-	pauseButton.addEventListener("click", stopCount);
-	restartButton.addEventListener("click", restartCount);
-	rewindButton.addEventListener("click", rewindCount);
-	fastForwardButton.addEventListener("click", fastForwardCount);
+	playButton.addEventListener("click", playAnimation);
+	pauseButton.addEventListener("click", stopAnimation);
+	restartButton.addEventListener("click", restartAnimation);
+	rewindButton.addEventListener("click", rewindAnimation);
+	fastForwardButton.addEventListener("click", fastForwardAnimation);
 }
 
 /**
@@ -284,7 +284,7 @@ function timedCount(scene) {
 	if(scene < 9) {
 		t = setTimeout(timedCount, sceneTime, ++scene);
 	} else {
-		stopCount();
+		stopAnimation();
 	}
 }
 
@@ -311,7 +311,7 @@ function getSceneTime() {
 	return sceneTime;
 }
 
-function startCount() {
+function playAnimation() {
 	console.log("Start Animation");
 	let paused = isPaused();
 	
@@ -332,7 +332,7 @@ function startCount() {
 	showButton(pauseButton);
 }
 
-function stopCount() {
+function stopAnimation() {
 	console.log("Stopping");
 	/*Pauses all scenes after this one*/
 	clearTimeout(t);
@@ -358,30 +358,30 @@ function pauseRunningScene() {
 	hideButton(pauseButton);
 }
 
-function restartCount() {
+function restartAnimation() {
 	console.log("Restarting");
 	setStatus("Restarting");
 	resetTyping();
 	resetCurrentScene();
 	resetAudio();
 	resetProgressBar();
-	startCount();
+	playAnimation();
 	hideAllButtons();
 	let pauseButton = document.getElementById("pauseButton");
 	showButton(pauseButton);
 	//timerCount(0);
 }
 
-function rewindCount() {
+function rewindAnimation() {
 	console.log("Rewinding");
 	currentScene--;
-	//startCount();
+	//playAnimation();
 }
 
-function fastForwardCount() {
+function fastForwardAnimation() {
 	console.log("Fast Forwarding");
 	currentScene++;
-	//startCount();
+	//playAnimation();
 }
 
 
