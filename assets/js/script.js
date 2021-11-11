@@ -48,18 +48,13 @@ function toggleMute() {
 	let soundImage = "assets/images/speaker.png";
 	let mutedImage = "assets/images/speaker-muted.png";
 	
-	console.log("toggleMute()");
-	console.log("this ::  ", this);
-	
 	/* this refers to the speakerImage element */
 	let image = this.getAttribute("src");
-	console.log("Image ::  ", image);
 	if(image === soundImage) {
 		/* Speaker image so we must mute the sound, 
 			then change to the muted image */
 		for(scene of scenes) {
 			/* Audio is stored in scene[2] */
-			console.log("Scene::  ", scene[0]);
 			/*https://www.developphp.com/video/JavaScript/Audio-Play-Pause-Mute-Buttons-Tutorial*/
 			scene[2].muted = true;
 		}
@@ -174,13 +169,10 @@ function progress(barTime) {
 			if(getStatus() == "Restarting") {
 				width = 1;
 				setStatus("");
-				console.log("ProgressBar:Restarting::  ");
-				console.log("isPaused() ::  ", isPaused());
 			} else  if(width >= 100) {
 				clearInterval(id);
 				running = false;
 			} else {
-					console.log("Running Progress bar")
 				if(!isPaused()) {
 					width++;
 					progressBar.style.width = width + "%";
@@ -242,6 +234,7 @@ function setUpScenes() {
 function timedAnimation(scene) {
 	let pictureContainer = document.getElementsByClassName("storyPicture")[0];
 	let sceneTime = getSceneTime();
+	console.log("timedAnimation():: scene :  ", scene);
 	let picture = scenes[scene][0];
 	let text = scenes[scene][1];
 	let audio = scenes[scene][2];
@@ -254,10 +247,11 @@ function timedAnimation(scene) {
 	/** https://www.w3schools.com/js/tryit.asp?filename=tryjs_timing2 */
 	/** https://www.programiz.com/javascript/examples/pass-parameter-setTimeout */
 	showScene(pictureContainer, picture, text, audio, scene + 1);
-	if(scene < scenes.length) {
+	if(scene < scenes.length -1) {
 		t = setTimeout(timedAnimation, sceneTime, ++scene);
 	} else {
-		stopAnimation();
+		//stopAnimation();
+		setTimeout(stopAnimation, sceneTime);
 	}
 }
 
@@ -269,12 +263,7 @@ function getSceneTime() {
 	 * Since the progress bar goes from 1% to 100%
 	 * We can use this to calculate the remaining time for this scenario
 	 */
-	let progressBar = document.getElementById("progressBar");
-	let progress = progressBar.style.width;	// E.G. 24%
-	/* Remove the '%' last character */
-	progress = removeLastCharacter(progress);
-	/* Convert to a number */
-	progress = parseInt(progress);
+	let progress = getProgressBarWidth();
 	//console.log("getSceneTime()::  ", sceneTime);
 	//console.log("getSceneTime():: progress bar width :  ", progress);
 	/* Progress bar is not at the start or the end, i.e. midway during the scene */
@@ -282,6 +271,17 @@ function getSceneTime() {
 		sceneTime = calculateRemainingTime(sceneTime, progress);
 	} 
 	return sceneTime;
+}
+
+function getProgressBarWidth() {
+	let progressBar = document.getElementById("progressBar");
+	let progress = progressBar.style.width;	// E.G. 24%
+	/* Remove the '%' last character */
+	progress = removeLastCharacter(progress);
+	/* Convert to a number */
+	progress = parseInt(progress);
+	
+	return progress;
 }
 
 function playAnimation() {
@@ -310,7 +310,17 @@ function stopAnimation() {
 	/*Pauses all scenes after this one*/
 	clearTimeout(t);
 	timer_is_on = false;
-	pauseRunningScene(getCurrentIndex());
+	if(animationEnded()) {
+			hideAllButtons();
+			
+			let restart = document.getElementById("restartButton");
+			let rewind = document.getElementById("rewindButton");
+			showButton(restart);
+			showButton(rewind);
+
+	} else {
+		pauseRunningScene(getCurrentIndex());
+	}
 }
 
 function getCurrentIndex() {
@@ -343,6 +353,20 @@ function pauseRunningScene(sceneIndex) {
 		hideButton(fastForwardButton);
 	}
 	
+}
+
+function animationEnded() {
+	let ended = false;
+	
+	if(getCurrentIndex() === scenes.length -1) {	// Last scene
+		let progress = getProgressBarWidth();
+		if(progress > 98) {		// Last Scene has ended
+			ended = true;
+			console.log("Animation ENDED");
+		}
+	}
+	
+	return ended;
 }
 
 function restartAnimation() {
@@ -482,7 +506,7 @@ function resetAudio() {
 
 function resetTyping() {
 	clearParagraph();
-	typed.reset();
+	typed.reset(false);
 }
 
 function setStatus(newStatus) {
