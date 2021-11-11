@@ -337,6 +337,12 @@ function pauseRunningScene(sceneIndex) {
 		hideButton(rewindButton);
 	}
 	
+	/* Cannot fast forward the last scene */
+	if(sceneIndex === scenes.length - 1) {
+		let fastForwardButton = document.getElementById("fastForwardButton");
+		hideButton(fastForwardButton);
+	}
+	
 }
 
 function restartAnimation() {
