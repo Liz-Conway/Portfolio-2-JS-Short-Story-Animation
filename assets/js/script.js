@@ -74,7 +74,6 @@ function toggleMute() {
 	}
 }
 
-
 function showScene(pictureImage, picture, sentences, audio, sceneNumber) {
 	/* Display the number of this scene */
 	updateSceneNumber(sceneNumber);
@@ -131,9 +130,11 @@ function typeParagraph(text) {
 	Otherwise the typing for the next scene will not work
  */
 function clearParagraph() {
-	let storyParagraph = document.getElementsByClassName("storyParagraph")[0];
-
-	storyParagraph.innerHTML = "";
+	let storyParagraphs = document.getElementsByClassName("storyParagraph");
+	
+	for(paragraph of storyParagraphs) {
+		paragraph.innerText = "";
+	}
 }
 
 /**
