@@ -1,3 +1,11 @@
+/*I could not find any way around using global variables
+since these variables need to be accessed by multiple functions*/
+var typed;	// For typed.js, used in writing out phrases character by character
+var t;			// Current timed animation
+var timer_is_on = false;
+var scenes;		// Array holding all the scenes data
+var scenesSetUp = false;
+
 /*
  * Only let the user play the animation once the DOM has finished loading
  * Wait for the DOM to finish loading
@@ -15,7 +23,7 @@ function pageLoaded() {
 	let fastForwardButton = document.getElementById("fastForwardButton");
 	
 	/* Initially the only option is to play the animation */
-	hideAllButtons();
+	//hideAllButtons();
 	showButton(playButton);
 	
 	/* Set the function to be called when the speaker image is clicked */
@@ -72,8 +80,6 @@ function toggleMute() {
 }
 
 
-/*I could not find any way around using global variables
-since these variables need to be accessed by multiple functions*/
 function showScene(pictureImage, picture, sentences, audio, sceneNumber) {
 	/* Display the number of this scene */
 	updateSceneNumber(sceneNumber);
@@ -103,7 +109,6 @@ function showScene(pictureImage, picture, sentences, audio, sceneNumber) {
 	audio.play();
 }
 
-var typed;
 /** Use typed.js to type out the entered text */
 function typeParagraph(text) {
 	let status = getStatus();
@@ -185,39 +190,6 @@ function progress(barTime) {
 	}
 } 
 
-/**
- * Function to pause the current scene
- */
-function pauseScene() {
-	console.log("Attempting to pause the current scene");
-	let sceneNumber = parseInt(document.getElementById("sceneNumber").textContent);
-	console.log("sceneNumber :  ", sceneNumber);
-	let currentScene = sceneNumber - 1;	// Since arrays are zero-based
-	console.log("currentScene :  ", currentScene);
-	
-	console.log("Timer");
-	console.log(timer);
-	console.log("Current Timer");
-	console.log(timer[currentScene]);
-	
-	//timer[currentScene].pause();
-	//timer[currentScene].clear();
-	//clearTimeout(timer[currentScene]);
-	console.log("Scenes to pause :  ", timer.length);
-	for(let i = 0; i < timer.length; i++) {
-		console.log("Clearing timeout :  ", i);
-		clearTimeout(timer[i]);
-	}
-}
-
-var c = 0;
-var t;
-var timer_is_on = false;
-//var currentScene = 0;
-var scenes;
-var scenesSetUp = false;
-//var pictureContainer;
-
 function setUpScenes() {
 	
 	let sceneOnePic = "assets/images/spinning-pandemic-globe-large.gif";
@@ -282,7 +254,7 @@ function timedAnimation(scene) {
 	/** https://www.w3schools.com/js/tryit.asp?filename=tryjs_timing2 */
 	/** https://www.programiz.com/javascript/examples/pass-parameter-setTimeout */
 	showScene(pictureContainer, picture, text, audio, scene + 1);
-	if(scene < 9) {
+	if(scene < scenes.length) {
 		t = setTimeout(timedAnimation, sceneTime, ++scene);
 	} else {
 		stopAnimation();
@@ -349,8 +321,8 @@ function getCurrentIndex() {
 	return --sceneNumber; 
 }
 
-function pauseRunningScene() {
-	let audio = scenes[getCurrentIndex()][2];
+function pauseRunningScene(sceneIndex) {
+	let audio = scenes[sceneIndex][2];
 	audio.pause();
 	typed.stop();
 	
@@ -360,7 +332,7 @@ function pauseRunningScene() {
 	
 	/* Cannot rewind the first scene - use restart instead
 	 First scene has index of 0*/
-	if(getCurrentIndex() === 0) {
+	if(sceneIndex === 0) {
 		let rewindButton = document.getElementById("rewindButton");
 		hideButton(rewindButton);
 	}
@@ -378,7 +350,6 @@ function restartAnimation() {
 	hideAllButtons();
 	let pauseButton = document.getElementById("pauseButton");
 	showButton(pauseButton);
-	//timerCount(0);
 }
 
 function rewindAnimation() {
