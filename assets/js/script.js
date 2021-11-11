@@ -349,7 +349,7 @@ function restartAnimation() {
 	console.log("Restarting");
 	setStatus("Restarting");
 	resetTyping();
-	resetCurrentScene(1);
+	updateSceneNumber(1);
 	resetAudio();
 	resetProgressBar();
 	playAnimation();
@@ -367,7 +367,7 @@ function rewindAnimation() {
 	we will use currentIndex instead.
 	The 'playAnimation' function uses the current scene number on the page
 	to determine where to play from.*/
-	resetCurrentScene(getCurrentIndex());
+	updateSceneNumber(getCurrentIndex());
 	resetAudio();
 	resetProgressBar();
 	playAnimation();
@@ -378,7 +378,21 @@ function rewindAnimation() {
 
 function fastForwardAnimation() {
 	console.log("Fast Forwarding");
-	//playAnimation();
+	setStatus("Restarting");
+	resetTyping();
+	/*Change the scene number on the page to current scene number +1
+	Since the currentIndex is one less than the current scene number
+	currentIndex +1 gives the current scene number, 
+	currentIndex + 2 give the next scene number.
+	The 'playAnimation' function uses the current scene number on the page
+	to determine where to play from.*/
+	updateSceneNumber(getCurrentIndex() + 2);	// Next scene number
+	resetAudio();
+	resetProgressBar();
+	playAnimation();
+	hideAllButtons();
+	let pauseButton = document.getElementById("pauseButton");
+	showButton(pauseButton);
 }
 
 
@@ -464,12 +478,6 @@ function resetAudio() {
 		let audio = scenes[i][2];
 		audio.currentTime = 0;
 	}
-}
-
-function resetCurrentScene(sceneNumber) {
-	let currentScene = document.getElementById("sceneNumber");
-	currentScene.innerText = sceneNumber;
-	
 }
 
 function resetTyping() {
