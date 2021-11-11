@@ -287,10 +287,9 @@ function getProgressBarWidth() {
 function playAnimation() {
 	console.log("Start Animation");
 	let paused = isPaused();
-	
-	console.log("Starting");
-	if(!scenesSetUp || scenes.length === 0) {
-		setUpScenes();
+	let sceneOfScenes = document.getElementById("sceneOfScenes");
+	if(!isElementVisible(sceneOfScenes)) {
+		showButton(sceneOfScenes);
 	}
 	
 	let scene = getCurrentIndex();
@@ -452,9 +451,9 @@ function hideAllButtons() {
 	}
 }
 
-function isButtonVisible(button) {
+function isElementVisible(element) {
 	/*https://blog.learnjavascript.online/posts/javascript-has-class/*/
-	return !button.classList.contains("invisible");
+	return !element.classList.contains("invisible");
 }
 
 /**
@@ -465,7 +464,7 @@ function isButtonVisible(button) {
 function isPaused() {
 	let restartButton = document.getElementById("restartButton");
 	
-	return isButtonVisible(restartButton);
+	return isElementVisible(restartButton);
 }
 
 /**
