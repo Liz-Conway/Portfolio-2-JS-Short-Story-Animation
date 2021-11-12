@@ -24,7 +24,7 @@ function pageLoaded() {
 	
 	/* Initially the only option is to play the animation */
 	//hideAllButtons();
-	showButton(playButton);
+	showElement(playButton);
 	
 	/* Set the function to be called when the speaker image is clicked */
 	let speakerImage = document.getElementById("speaker");
@@ -240,9 +240,12 @@ function timedAnimation(scene) {
 	let text = scenes[scene][1];
 	let audio = scenes[scene][2];
 
+	/* Initial setup - should only be done once */
 	if(scene === 0) {
 		/* Display the total number of scenes */
 		updateSceneTotal(scenes.length);
+		let speakerImage = document.getElementById("speaker");
+		showElement(speakerImage);
 	}
 	
 	/** https://www.w3schools.com/js/tryit.asp?filename=tryjs_timing2 */
@@ -290,7 +293,7 @@ function playAnimation() {
 	let paused = isPaused();
 	let sceneOfScenes = document.getElementById("sceneOfScenes");
 	if(!isElementVisible(sceneOfScenes)) {
-		showButton(sceneOfScenes);
+		showElement(sceneOfScenes);
 	}
 	
 	let scene = getCurrentIndex();
@@ -302,7 +305,7 @@ function playAnimation() {
 	/* Hide Play button & show Pause button*/
 	let pauseButton = document.getElementById("pauseButton");
 	hideAllButtons(); 
-	showButton(pauseButton);
+	showElement(pauseButton);
 }
 
 function stopAnimation() {
@@ -315,8 +318,8 @@ function stopAnimation() {
 			
 			let restart = document.getElementById("restartButton");
 			let rewind = document.getElementById("rewindButton");
-			showButton(restart);
-			showButton(rewind);
+			showElement(restart);
+			showElement(rewind);
 
 	} else {
 		pauseRunningScene(getCurrentIndex());
@@ -338,19 +341,19 @@ function pauseRunningScene(sceneIndex) {
 	
 	showAllButtons();
 	let pauseButton = document.getElementById("pauseButton");
-	hideButton(pauseButton);
+	hideElement(pauseButton);
 	
 	/* Cannot rewind the first scene - use restart instead
 	 First scene has index of 0*/
 	if(sceneIndex === 0) {
 		let rewindButton = document.getElementById("rewindButton");
-		hideButton(rewindButton);
+		hideElement(rewindButton);
 	}
 	
 	/* Cannot fast forward the last scene */
 	if(sceneIndex === scenes.length - 1) {
 		let fastForwardButton = document.getElementById("fastForwardButton");
-		hideButton(fastForwardButton);
+		hideElement(fastForwardButton);
 	}
 	
 }
@@ -379,7 +382,7 @@ function restartAnimation() {
 	playAnimation();
 	hideAllButtons();
 	let pauseButton = document.getElementById("pauseButton");
-	showButton(pauseButton);
+	showElement(pauseButton);
 }
 
 function rewindAnimation() {
@@ -397,7 +400,7 @@ function rewindAnimation() {
 	playAnimation();
 	hideAllButtons();
 	let pauseButton = document.getElementById("pauseButton");
-	showButton(pauseButton);
+	showElement(pauseButton);
 }
 
 function fastForwardAnimation() {
@@ -416,20 +419,20 @@ function fastForwardAnimation() {
 	playAnimation();
 	hideAllButtons();
 	let pauseButton = document.getElementById("pauseButton");
-	showButton(pauseButton);
+	showElement(pauseButton);
 }
 
 
-function hideButton(button) {
-	/* Hide the button */
+function hideElement(element) {
+	/* Hide the element  */
 	/*https://www.w3schools.com/howto/howto_js_add_class.asp*/
-	button.classList.add("invisible");
+	element.classList.add("invisible");
 }
 
-function showButton(button) {
-	/* Show the button*/
+function showElement(element) {
+	/* Show the element */
 	/*https://www.w3schools.com/howto/howto_js_remove_class.asp*/
-	button.classList.remove("invisible");	
+	element.classList.remove("invisible");	
 }
 
 function showAllButtons() {
