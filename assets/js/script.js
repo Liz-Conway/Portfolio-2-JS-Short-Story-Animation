@@ -38,6 +38,14 @@ function pageLoaded() {
 	restartButton.addEventListener("click", restartAnimation);
 	rewindButton.addEventListener("click", rewindAnimation);
 	fastForwardButton.addEventListener("click", fastForwardAnimation);
+	
+	/* Add tooltip to each button */
+	setTitle(playButton, "Click to play the animation");
+	setTitle(pauseButton, "After pausing you can restart, rewind, fast forward or continue playing");
+	setTitle(restartButton, "Restarts the animation from the 1st scene");
+	setTitle(rewindButton, "Plays the animation from the last scene");
+	setTitle(fastForwardButton, "Start playing at the next scene");
+	setTitle(speakerImage, "Click to mute/unmute the sound");
 }
 
 /**
@@ -228,6 +236,7 @@ function setUpScenes() {
 	let sceneFour = [sceneFourPic, sceneFourText, sceneFourAudio];
 
 	scenes = [sceneOne, sceneTwo, sceneThree, sceneFour];
+	//scenes = [sceneOne];
 	scenesSetUp = true;
 }
 
@@ -320,7 +329,6 @@ function stopAnimation() {
 			let rewind = document.getElementById("rewindButton");
 			showElement(restart);
 			showElement(rewind);
-
 	} else {
 		pauseRunningScene(getCurrentIndex());
 	}
@@ -521,3 +529,10 @@ function getStatus() {
 	let status = document.getElementById("status");
 	return status.innerText;
 }
+
+function setTitle(element, title) {
+	/* Set the title of the element  */
+	/*https://stackoverflow.com/questions/27466969/how-to-add-attribute-to-html-element-using-javascript*/
+	element.setAttribute("title", title);
+}
+
