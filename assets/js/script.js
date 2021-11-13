@@ -227,6 +227,47 @@ function setUpScenes() {
 
 	let sceneFourAudio = new Audio("assets/audio/scene4.mp3");
 
+	let sceneFivePic = "assets/images/keep-distance.gif";
+
+	let sceneFiveText = ["The Coronavirus has been traveling fast from one person to another.  ",
+		"If many people are close together in the same place, that makes it easier for a virus to spread.  ",
+		"More people become sick faster."];
+
+	let sceneFiveAudio = new Audio("assets/audio/scene5.mp3");
+
+	let sceneSixPic = "assets/images/schools-closed.gif";
+
+	let sceneSixText = ["Sometimes schools close during a pandemic.  ",
+		"That way, children are farther apart from one another and it’s harder for a virus to spread."];
+
+	let sceneSixAudio = new Audio("assets/audio/scene6.mp3");
+
+	let sceneSevenPic = "assets/images/changing-calendar.gif";
+
+	let sceneSevenText = ["A pandemic can cause people to reschedule their vacation plans.  ",
+		"This is because vacations are often in fun and crowded places.  ",
+		"People try to avoid crowds in a pandemic.  ",
+		"They may re-schedule their trip."];
+
+	let sceneSevenAudio = new Audio("assets/audio/scene7.mp3");
+
+	let sceneEightPic = "assets/images/parents-child.gif";
+
+	let sceneEightText = ["My parents are learning more about the Coronavirus every day.  ",
+		"They watch the news and look for information.  ",
+		"They are watching out for me, too.  ",
+		"If I have questions, they can help."];
+
+	let sceneEightAudio = new Audio("assets/audio/scene8.mp3");
+
+	let sceneNinePic = "assets/images/belting-covid.gif";
+
+	let sceneNineText = ["It’s good to know that pandemics don’t happen very often.  ",
+		"They occur about once every twenty-five or thirty years, or about three times every one hundred years.  ",
+		"It’s also helpful to remember that the Coronavirus pandemic will end; probably not by tomorrow morning, but it will end."];
+
+	let sceneNineAudio = new Audio("assets/audio/scene9.mp3");
+
 	let sceneOne = [sceneOnePic, sceneOneText, sceneOneAudio];
 
 	let sceneTwo = [sceneTwoPic, sceneTwoText, sceneTwoAudio];
@@ -235,8 +276,18 @@ function setUpScenes() {
 
 	let sceneFour = [sceneFourPic, sceneFourText, sceneFourAudio];
 
-	scenes = [sceneOne, sceneTwo, sceneThree, sceneFour];
-	//scenes = [sceneOne];
+	let sceneFive = [sceneFivePic, sceneFiveText, sceneFiveAudio];
+
+	let sceneSix = [sceneSixPic, sceneSixText, sceneSixAudio];
+
+	let sceneSeven = [sceneSevenPic, sceneSevenText, sceneSevenAudio];
+
+	let sceneEight = [sceneEightPic, sceneEightText, sceneEightAudio];
+	
+	let sceneNine = [sceneNinePic, sceneNineText, sceneNineAudio];
+
+	scenes = [sceneOne, sceneTwo, sceneThree, sceneFour, sceneFive, sceneSix, sceneSeven, sceneEight, sceneNine];
+	
 	scenesSetUp = true;
 }
 
@@ -263,7 +314,6 @@ function timedAnimation(scene) {
 	if(scene < scenes.length -1) {
 		t = setTimeout(timedAnimation, sceneTime, ++scene);
 	} else {
-		//stopAnimation();
 		setTimeout(stopAnimation, sceneTime);
 	}
 }
