@@ -87,4 +87,11 @@ Pandemics and the Coronavirus](https://carolgraysocialstories.com/wp-content/upl
 | <img src="assets/images/wash-hands.gif" alt="washing hands" width="30" height="30"> |Wash Hands | NewYork-Presbyterian | https://healthmatters.nyp.org/tag/soap/ |
 | <img src="assets/images/speaker.png" alt="speaker" width="30" height="30"> |Speaker | icons8.com | https://img.icons8.com/ios/2x/speaker.png |
 | <img src="assets/images/speaker-muted.png" alt="muted speaker" width="30" height="30"> |Muted Speaker | icons8.com | https://img.icons8.com/ios/2x/speaker.png |
-
+| <img src="assets/images/keep-distance.gif" alt="keep your distance" width="30" height="30"> |Keep your distance | William Garrat | https://giphy.com/gifs/stayathome-staysafe-keep-your-distance-lRijoaJYDzQ7fGkqTr |
+| <img src="assets/images/schools-closed.gif" alt="schools are closed" width="30" height="30"> |Schools are closed | img.freepik.com | https://img.freepik.com/free-vector/cartoon-background-with-empty-classroom-interior-inside_1441-1735.jpg?size=626&ext=jpg |
+| <img src="assets/images/schools-closed.gif" alt="schools are closed" width="30" height="30"> |Schools are closed | Grant Fisher | https://dribbble.com/shots/2477332-School-Bus |
+| <img src="assets/images/schools-closed.gif" alt="schools are closed" width="30" height="30"> |Schools are closed | BabyFirst | https://giphy.com/gifs/BabyFirst-bus-backtoschool-babyfirst-YlYvNi3peKT6gsyurj |
+| <img src="assets/images/holidays.gif" alt="people going on holiday" width="30" height="30"> |Going on Holiday | StoryboardThat | https://www.storyboardthat.com/ |
+| <img src="assets/images/schools-closed.gif" alt="schools are closed" width="30" height="30"> |Changing calendar | PresenterMedia | https://www.presentermedia.com/powerpoint-animation/pages-tearing-off-calendar-pid-10077 |
+| <img src="assets/images/parents-child.gif" alt="child and her parents" width="30" height="30"> |Parents look out for child | June Ahn | https://cdn.dribbble.com/users/1080395/screenshots/3058163/a-happy-girl-with-her-family.gif |
+| <img src="assets/images/belting-covid.gif" alt="lady bashing covid with a broom" width="30" height="30"> |Belting covid | ohmygoodness.com | https://www.pinterest.ie/pin/754775218791429884/ |
