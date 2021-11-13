@@ -69,10 +69,10 @@ body {
   background: #fffe87;
   position: relative;
   font-family: "Gabriela";
-  font-size: 18px;
-  line-height: 24px;
-  border-radius: 40px;
-  padding: 24px;
+  font-size: 1.7rem;
+  line-height: 2.3rem;
+  border-radius: 4rem;
+  padding: 1.5rem 2rem 0 2rem;
   text-align: center;
   color: #394f49;
   height: 40vh;
