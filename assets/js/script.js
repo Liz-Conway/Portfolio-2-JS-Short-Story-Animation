@@ -82,7 +82,8 @@ function toggleMute() {
 	}
 }
 
-function showScene(pictureImage, picture, sentences, audio, sceneNumber) {
+function showScene(picture, sentences, audio, sceneNumber) {
+	let pictureImage = document.getElementById("storyPicture");
 	/* Display the number of this scene */
 	updateSceneNumber(sceneNumber);
 	
@@ -109,6 +110,27 @@ function showScene(pictureImage, picture, sentences, audio, sceneNumber) {
 	clearParagraph();
 	typeParagraph(sceneParagraph);
 	audio.play();
+	
+	let picContainer = document.getElementsByClassName("storyPicContainer")[0];
+	/* Scene number 7 has a background picture
+	 * - only add this if scene is 7
+	 */
+	if(sceneNumber === 7) {
+		/*https://www.developphp.com/video/JavaScript/Audio-Play-Pause-Mute-Buttons-Tutorial*/
+		picContainer.style.background = "url(assets/images/holidays.gif) no-repeat center";
+		picContainer.style.backgroundSize = "cover";
+	}
+	/* Reset the background image for other scenes */
+	console.log("Background pic :  ", picContainer.style.backgroundImage);
+	if(sceneNumber === 1 || sceneNumber === 6 || sceneNumber === 8) {
+		/* 1 = User Restarted the animation
+		 * 6 = User Rewound to the previous scene
+		 * 8 = Normal Play or user Fast Forwarded the animation
+		 */
+		if(picContainer.style.backgroundImage !== "") {
+			picContainer.style.backgroundImage = "";
+		}
+	}
 }
 
 /** Use typed.js to type out the entered text */
@@ -293,7 +315,6 @@ function setUpScenes() {
 
 /*https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_win_settimeout_cleartimeout2*/
 function timedAnimation(scene) {
-	let pictureContainer = document.getElementsByClassName("storyPicture")[0];
 	let sceneTime = getSceneTime();
 	console.log("timedAnimation():: scene :  ", scene);
 	let picture = scenes[scene][0];
@@ -308,10 +329,10 @@ function timedAnimation(scene) {
 		showElement(speakerImage);
 	}
 	
-	/** https://www.w3schools.com/js/tryit.asp?filename=tryjs_timing2 */
-	/** https://www.programiz.com/javascript/examples/pass-parameter-setTimeout */
-	showScene(pictureContainer, picture, text, audio, scene + 1);
+	showScene(picture, text, audio, scene + 1);
 	if(scene < scenes.length -1) {
+		/** https://www.w3schools.com/js/tryit.asp?filename=tryjs_timing2 */
+		/** https://www.programiz.com/javascript/examples/pass-parameter-setTimeout */
 		t = setTimeout(timedAnimation, sceneTime, ++scene);
 	} else {
 		setTimeout(stopAnimation, sceneTime);

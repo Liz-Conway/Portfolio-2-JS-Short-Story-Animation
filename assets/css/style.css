@@ -125,7 +125,8 @@ body {
   flex-direction: column;
   margin-top: 1rem;
 }
-.storyPicture {
+
+#storyPicture {
   height: 100%;
 }
 
