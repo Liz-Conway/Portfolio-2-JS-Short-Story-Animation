@@ -30,6 +30,7 @@ html {
 body {
   /* Inheritable properties */
   box-sizing: border-box;
+  font-size: 1.6rem;
   overflow-y: hidden;
   /* Non-inheritable */
   padding: 2rem;
@@ -79,6 +80,9 @@ body {
   color: #394f49;
   height: 23.5rem;
 }
+  .storyText p {
+    margin-bottom: 1.5rem;
+}
 
 /* https://codepen.io/run-time/pen/VNRBJd */
 .bubbleBottomLeft:before {
@@ -112,24 +116,27 @@ body {
 .storyWrapper {
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-between;
   background-color: #191970;
 }
+
 .storyPicContainer {
-  width: 70%;
+  width: 60%;
   height: 38.2rem;
   display: flex;
   justify-content: center;
 }
 .storyBubble {
-  width: 25%;
+  width: 36%;
   display: flex;
   flex-direction: column;
   margin-top: 1rem;
+  margin-right: 2rem;
 }
 
 #storyPicture {
   height: 100%;
+  max-width: 100%;
 }
 
 .speechEmoji {
@@ -198,4 +205,40 @@ h2 {
 
 .invisible {
   display: none;
+}
+
+@media only screen and (max-width: 950px) {
+    html {
+      font-size: 56.25%;
+	}
+	
+	.storyText {
+      width: 100%;
+      padding-top: 2rem;
+      margin-bottom: 1rem;
+      margin-left: 2rem;
+      margin-right: 2rem;
+	}
+	
+	.bubbleBottomLeft:before {
+      left: auto;
+      right: -3.2rem;
+      bottom: 2.4rem;
+	}
+	
+	.storyWrapper {
+      flex-direction: column;
+      align-items: center;
+	}
+	
+	.storyBubble {
+      flex-direction: row;
+      width: 100%;
+      align-items: flex-end;
+	}
+	
+	.speechEmoji {
+      margin-bottom: 2rem;
+      margin-top: auto;
+	}
 }
