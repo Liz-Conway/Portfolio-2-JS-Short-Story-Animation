@@ -13,6 +13,8 @@ var scenesSetUp = false;
 document.addEventListener("DOMContentLoaded", pageLoaded());
 
 function pageLoaded() {
+	console.log("Window width :  ", window.innerWidth);
+	console.log("Window height :  ", window.innerHeight);
 	setUpScenes();
 	
 	let playButton = document.getElementById("playButton");

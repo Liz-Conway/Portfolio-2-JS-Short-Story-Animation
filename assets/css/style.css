@@ -17,6 +17,7 @@ body {
 }
 
 html {
+  /*https://www.aleksandrhovhannisyan.com/blog/respecting-font-size-preferences-rems-62-5-percent/#is-this-accessible */
   /* Since browser default font-size is 16px */
   /* Set it to 10px to make converting px to rem easier. */
   /* Use a percentage so that if a user changes the font size */
@@ -29,6 +30,7 @@ html {
 body {
   /* Inheritable properties */
   box-sizing: border-box;
+  overflow-y: hidden;
   /* Non-inheritable */
   padding: 2rem;
 }

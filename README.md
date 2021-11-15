@@ -73,8 +73,9 @@ Pandemics and the Coronavirus](https://carolgraysocialstories.com/wp-content/upl
 | Javascript code to run after page has finished loading | Code Institute            | [DOM loaded code](https://learn.codeinstitute.net/courses/course-v1:CodeInstitute+LM101+2021_T1/courseware/2d651bf3f23e48aeb9b9218871912b2e/78f3c10a937c4fe09640c7c0098d16bd/)             |
 | Javascript - Event listeners for buttons               | Code Institute            | [Event listeners for buttons](https://learn.codeinstitute.net/courses/course-v1:CodeInstitute+LM101+2021_T1/courseware/2d651bf3f23e48aeb9b9218871912b2e/78f3c10a937c4fe09640c7c0098d16bd/) |
 | Javascript - Mute & Unmute audio                       | DevelopPHP.com            | [(Un)mute audio](https://www.developphp.com/video/JavaScript/Audio-Play-Pause-Mute-Buttons-Tutorial)                                                                                       |
-| Javascript - Add attribute to HTML element             | Stack Overflow            | [Add attribute](https://stackoverflow.com/questions/27466969/how-to-add-attribute-to-html-element-using-javascript) |
-|    Javascript - Add background image                   |  DelftStack               |        https://www.developphp.com/video/JavaScript/Audio-Play-Pause-Mute-Buttons-Tutorial                                                                                          |
+| Javascript - Add attribute to HTML element             | Stack Overflow            | [Add attribute](https://stackoverflow.com/questions/27466969/how-to-add-attribute-to-html-element-using-javascript)                                                                        |
+| Javascript - Add background image                      | DelftStack                | https://www.developphp.com/video/JavaScript/Audio-Play-Pause-Mute-Buttons-Tutorial |
+|      Using REMs in CSS                                 | Aleksandr Hovhannisyan  |       https://www.aleksandrhovhannisyan.com/blog/respecting-font-size-preferences-rems-62-5-percent/#is-this-accessible |
 
 ### Pictures
 
