@@ -242,3 +242,21 @@ h2 {
       margin-top: auto;
 	}
 }
+
+@media only screen and (max-width: 800px) {
+    html {
+      font-size: 50%;
+	}
+	
+	.storyText {
+      padding-top: 0.8rem;
+      margin-left: 1.5rem;
+      margin-right: 1.5rem;
+	}
+}
+
+@media only screen and (max-width: 600px) {
+    html {
+      font-size: 44%;
+	}
+}
