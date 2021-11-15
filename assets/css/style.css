@@ -90,12 +90,12 @@ body {
   width: 0px;
   height: 0px;
   position: absolute;
-  border-left: 24px solid #fffe87;
-  border-right: 12px solid transparent;
-  border-top: 12px solid #fffe87;
-  border-bottom: 20px solid transparent;
-  left: 32px;
-  bottom: -24px;
+  border-left: 2.4rem solid #fffe87;
+  border-right: 1.2rem solid transparent;
+  border-top: 1.2rem solid #fffe87;
+  border-bottom: 2rem solid transparent;
+  left: 3.2rem;
+  bottom: -2.4rem;
 }
 
 /*https://www.w3schools.com/howto/howto_js_progressbar.asp */
@@ -222,7 +222,7 @@ h2 {
 	
 	.bubbleBottomLeft:before {
       left: auto;
-      right: -3.2rem;
+      right: -3.1rem;
       bottom: 2.4rem;
 	}
 	
