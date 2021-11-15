@@ -77,7 +77,7 @@ body {
   padding: 1.5rem 2rem 0 2rem;
   text-align: center;
   color: #394f49;
-  height: 40vh;
+  height: 23.5rem;
 }
 
 /* https://codepen.io/run-time/pen/VNRBJd */
@@ -117,7 +117,7 @@ body {
 }
 .storyPicContainer {
   width: 70%;
-  height: 65vh;
+  height: 38.2rem;
   display: flex;
   justify-content: center;
 }
