@@ -214,7 +214,11 @@ h2 {
   display: none;
 }
 
-@media only screen and (max-width: 950px) {
+/* 950px/16px = 59.375em
+Media Queries for tablets in landscape orientation
+Using em instead of pixels for improved responsiveness to user zooming
+https://cloudfour.com/thinks/the-ems-have-it-proportional-media-queries-ftw/ */
+@media only screen and (max-width: 59.375em) {
     html {
       font-size: 56.25%;
 	}
@@ -232,7 +236,7 @@ h2 {
       right: -3.1rem;
       bottom: 2.4rem;
 	}
-	
+
 	.storyWrapper {
       flex-direction: column;
       align-items: center;
@@ -250,7 +254,9 @@ h2 {
 	}
 }
 
-@media only screen and (max-width: 800px) {
+/* 800px/16px = 50em
+Media Queries for tablets in potrait orientation */
+@media only screen and (max-width: 50em) {
     html {
       font-size: 50%;
 	}
@@ -262,7 +268,9 @@ h2 {
 	}
 }
 
-@media only screen and (max-width: 600px) {
+/* 600px/16px = 37.5em
+Media Queries for phones */
+@media only screen and (max-width: 37.5em) {
     html {
       font-size: 44%;
 	}
