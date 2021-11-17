@@ -336,3 +336,19 @@ Media Queries for really small phones */
       flex-wrap: wrap;
 	}
 }
+
+/* 1200px/16px = 75em
+Media Queries for large desktops */
+@media only screen and (min-width: 75em) {
+    html {
+      font-size: 75%; 
+    }
+    
+    h1 {
+      letter-spacing: 4px;
+    }
+    
+    .storyText {
+      line-height: 2.5rem;
+    }
+}
