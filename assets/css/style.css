@@ -8,6 +8,15 @@ body {
   color: #394f49;
 }
 
+h1 {
+  color: #F3B391;
+  text-shadow: 1px 1px 0px #ee9363, 2px 2px 0px #eb834c, 3px 3px 0px #e97335, 4px 4px 0px #e6641e, 4px 4px 2px #f00;
+}
+
+h2 {
+  margin: 0 auto;
+}
+
 /* Basic reset */
 *, *::after, *::before {
   text-decoration: none;
@@ -134,24 +143,10 @@ body {
   margin-right: 2rem;
 }
 
-#storyPicture {
-  height: 100%;
-  max-width: 100%;
-}
-
 .speechEmoji {
   width: 25%;
   margin-bottom: auto;
   margin-top: 2rem;
-}
-
-h1 {
-  color: #F3B391;
-  text-shadow: 1px 1px 0px #ee9363, 2px 2px 0px #eb834c, 3px 3px 0px #e97335, 4px 4px 0px #e6641e, 4px 4px 2px #F00;
-}
-
-h2 {
-  margin: 0 auto;
 }
 
 .btn {
@@ -166,6 +161,7 @@ h2 {
   text-align: center;
   transition: all 0.2s;
 }
+
   .btn:hover {
     /* Make the button pop up => 3D effect */
     transform: translateY(-0.5rem);
@@ -261,10 +257,26 @@ Media Queries for tablets in potrait orientation */
       font-size: 50%;
 	}
 	
+	h1 {
+      font-size: 2.9rem;
+	}
+	
+	h2 {
+      font-size: 2.2rem;
+	}
+	
 	.storyText {
       padding-top: 0.8rem;
       margin-left: 1.5rem;
       margin-right: 1.5rem;
+	}
+	
+	.btn {
+      padding: 1rem 3rem;
+	}
+	
+	.btn:not(:last-child) {
+        margin-right: 1.5rem;
 	}
 }
 
