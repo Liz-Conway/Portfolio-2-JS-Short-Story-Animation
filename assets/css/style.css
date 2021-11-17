@@ -286,4 +286,11 @@ Media Queries for phones */
     html {
       font-size: 44%;
 	}
+	
+	h1 {
+      text-shadow: 1px 1px 0 #f00;
+      font-size: 2.8rem;
+	}
+}
+
 }
