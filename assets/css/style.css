@@ -312,3 +312,27 @@ Media Queries for small phones */
       padding: 0.7rem 2.5rem;
 	}
 }
+
+/* 414px/16px = 28.875em
+Media Queries for really small phones */
+@media only screen and (max-width: 28.875em) {
+    h1 {
+      font-size: 2.5rem;
+	}
+	
+	.storyText {
+      width: 140%;
+      padding-top: 0.7rem;
+      margin-left: 1.2rem;
+      margin-right: 1.2rem;
+      font-size: 1.4rem;
+	}
+	
+	.btn {
+      margin-bottom: 1rem;
+	}
+	
+	#buttons {
+      flex-wrap: wrap;
+	}
+}
