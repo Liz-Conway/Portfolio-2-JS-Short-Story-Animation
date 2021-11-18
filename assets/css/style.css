@@ -45,7 +45,6 @@ body {
 	/* Inheritable properties */
 	box-sizing: border-box;
 	font-size: 1.6rem;
-	overflow-y: hidden;
 	/* Non-inheritable */
 	padding: 0.5rem 2rem 0 2rem;
 }
@@ -286,6 +285,9 @@ Media Queries for phones */
 @media only screen and (max-width: 37.5em) {
 	html {
 		font-size: 44%;
+	}
+	body {
+		overflow-y: hidden;
 	}
 	h1 {
 		text-shadow: 1px 1px 0 #f00;
