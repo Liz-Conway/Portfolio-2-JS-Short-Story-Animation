@@ -36,6 +36,15 @@ A colour palette was generated from [coolors](https://coolors.co).  The colours 
 * All audio was created using [Speecholo](https://app.blasteronline.com/speechelo/)
 * 
 ## Software Development Process
+
+### Validation
+**CSS** was validated using [W3C CSS validator](https://jigsaw.w3.org/css-validator/validator)
+![CSS Validated](C:\Code Institute\Portfolio 2 Javascript\Portfolio-2-JS-Short-Story-Animation\documentation\validation\css-validation.png)
+**HTML** was validated on the index page using [W3C HTML validator](https://validator.w3.org/)
+![html validation index page](C:\Code Institute\Portfolio 2 Javascript\Portfolio-2-JS-Short-Story-Animation\documentation\validation\html-validation-index-page.png)
+**Javascript** was validated using [JSHint](https://jshint.com)
+![JSHint validation](C:\Code Institute\Portfolio 2 Javascript\Portfolio-2-JS-Short-Story-Animation\documentation\validation\jshint-validation.png)
+Both warnings relate to code that was taken from other code that has been sourced and is documented elsewhere.
 ### Documentation  
 - README.md :  Comprehensive overview of the Short Story Animation website detailing how it works, what its features are, the technologies involved and all the design decisions that were made in creating this infographic animation.
 - [Vision doc](documentation/vision-document-carol-grey-social-stories-portfolilio-2-js.docx) :  Business needs and feature list.
@@ -119,3 +128,4 @@ Pandemics and the Coronavirus](https://carolgraysocialstories.com/wp-content/upl
 | <img src="assets/images/parents-child.gif" alt="child and her parents" width="30" height="30"> |Parents look out for child | June Ahn | https://cdn.dribbble.com/users/1080395/screenshots/3058163/a-happy-girl-with-her-family.gif |
 | <img src="assets/images/belting-covid.gif" alt="lady bashing covid with a broom" width="30" height="30"> |Belting covid | Roberto Mangosti | https://www.pinterest.ie/pin/754775218791429884/ |
 | <img src="assets/favicon/favicon.ico" alt="Emoji wearing a medical mask" width="30" height="30"> |Favicon |Twemoji([copyright Twitter 2020](https://creativecommons.org/licenses/by/4.0/))| https://favicon.io/emoji-favicons/face-with-medical-mask |
+
