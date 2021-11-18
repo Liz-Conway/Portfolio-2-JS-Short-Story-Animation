@@ -63,7 +63,7 @@ function toggleMute() {
 	if(image === soundImage) {
 		/* Speaker image so we must mute the sound, 
 			then change to the muted image */
-		for(scene of scenes) {
+		for(let scene of scenes) {
 			/* Audio is stored in scene[2] */
 			/*https://www.developphp.com/video/JavaScript/Audio-Play-Pause-Mute-Buttons-Tutorial*/
 			scene[2].muted = true;
@@ -73,7 +73,7 @@ function toggleMute() {
 	} else {
 		/* Sound is already muted, so unmute it
 			then change to the unmuted image */
-		for(scene of scenes) {
+		for(let scene of scenes) {
 			/* Audio is stored in scene[2] */
 			console.log("Scene::  ", scene[0]);
 			/*https://www.developphp.com/video/JavaScript/Audio-Play-Pause-Mute-Buttons-Tutorial*/
@@ -164,7 +164,7 @@ function typeParagraph(text) {
 function clearParagraph() {
 	let storyParagraphs = document.getElementsByClassName("storyParagraph");
 	
-	for(paragraph of storyParagraphs) {
+	for(let paragraph of storyParagraphs) {
 		paragraph.innerText = "";
 	}
 }
@@ -198,6 +198,8 @@ function progress(barTime) {
 		let width = 1;
 		let id = setInterval(frame, barTime/100);
 		
+		/* JSHint complains about this function
+		 * but it is as I copied from W3 Schools */
 		function frame() {
 			if(getStatus() == "Restarting") {
 				width = 1;
@@ -372,7 +374,7 @@ function getProgressBarWidth() {
 
 function playAnimation() {
 	console.log("Start Animation");
-	let paused = isPaused();
+	
 	let sceneOfScenes = document.getElementById("sceneOfScenes");
 	if(!isElementVisible(sceneOfScenes)) {
 		showElement(sceneOfScenes);
@@ -519,7 +521,7 @@ function showElement(element) {
 function showAllButtons() {
 	let buttons = document.getElementsByTagName("button");
 	
-	for(button of buttons) {
+	for(let button of buttons) {
 		/* Show the button*/
 		/*https://www.w3schools.com/howto/howto_js_remove_class.asp*/
 		button.classList.remove("invisible");	
@@ -529,7 +531,7 @@ function showAllButtons() {
 function hideAllButtons() {
 	let buttons = document.getElementsByTagName("button");
 	
-	for(button of buttons) {
+	for(let button of buttons) {
 		/* Hide the button*/
 		/*https://www.w3schools.com/howto/howto_js_add_class.asp*/
 		button.classList.add("invisible");	
