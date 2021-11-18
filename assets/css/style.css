@@ -8,7 +8,8 @@ body {
 	font-weight: 600;
 	font-size: 1.6rem;
 	line-height: 1.7;
-	color: #394f49;
+	color: #191970;
+	background-color: #3F612D;
 }
 
 h1 {
@@ -115,7 +116,7 @@ body {
 /*https://www.w3schools.com/howto/howto_js_progressbar.asp */
 #progressWrapper {
 	width: 100%;
-	background-color: #3F612D;
+	background-color: #394F49;
 }
 
 #progressBar {
