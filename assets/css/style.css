@@ -47,7 +47,7 @@ body {
 	font-size: 1.6rem;
 	overflow-y: hidden;
 	/* Non-inheritable */
-	padding: 2rem;
+	padding: 0.5rem 2rem 0 2rem;
 }
 
 .utilCentreText {
