@@ -13,6 +13,8 @@
 * Does not scroll on desktop - remove top padding?
 * Animated gifs do not pause when the story is paused.
 * When user sets the font size to large on their browser, text overflows the speech bubble.
+* Slight delay in changing the picture on smaller devices.
+* Keyboard working to mute/unmute speaker, BUT click NOT working any more.
 ## UX
 ### Storyboard
 ![Scene 1](C:\Code Institute\Portfolio 2 Javascript\Portfolio-2-JS-Short-Story-Animation\documentation\ux\storyboard\scene1.png)

@@ -47,6 +47,13 @@ body {
 	font-size: 1.6rem;
 	/* Non-inheritable */
 	padding: 0.5rem 2rem 0 2rem;
+	display: flex;
+	flex-direction: column;
+	min-height: 90vh;
+}
+
+footer {
+	margin-top: auto;
 }
 
 .utilCentreText {
