@@ -1,5 +1,5 @@
 @import
-	url("https://fonts.googleapis.com/css2?family=Gabriela&family=Roboto+Slab")
+	url("https://fonts.googleapis.com/css2?family=Gabriela&family=Roboto+Slab&display=swap")
 	;
 
 body {
@@ -253,6 +253,9 @@ https://cloudfour.com/thinks/the-ems-have-it-proportional-media-queries-ftw/ */
 		margin-bottom: 2rem;
 		margin-top: auto;
 	}
+	.storyPicContainer {
+		height: 35rem;
+	}
 }
 
 /* 800px/16px = 50em
@@ -278,6 +281,9 @@ Media Queries for tablets in potrait orientation */
 	.btn:not(:last-child) {
 		margin-right: 1.5rem;
 	}
+	.storyPicContainer {
+		height: 32rem;
+	}
 }
 
 /* 600px/16px = 37.5em
@@ -295,6 +301,9 @@ Media Queries for phones */
 	}
 	.storyText {
 		height: 26rem;
+	}
+	.storyPicContainer {
+		height: 30rem;
 	}
 }
 
