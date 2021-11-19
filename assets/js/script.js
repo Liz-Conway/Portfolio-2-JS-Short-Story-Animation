@@ -31,6 +31,8 @@ function pageLoaded() {
 	/* Set the function to be called when the speaker image is clicked */
 	let speakerImage = document.getElementById("speaker");
 	speakerImage.addEventListener("click", toggleMute);
+	/* Don't forget about keyboard users */
+	speakerImage.addEventListener("keydown", toggleMute);
 	
 	/* Set event listeners for all the buttons
 	 * When the button is clicked this function will be called.
@@ -54,7 +56,14 @@ function pageLoaded() {
  * If sound is unmuted then mute the sound
  * If sound is already muted then unmute it
  */
-function toggleMute() {
+function toggleMute(event) {
+	console.log("Event :  ",  event);
+	if(event !== undefined) {
+				console.log("Key Pressed :  ", event.key);
+	}
+	if(event.key !== "Enter") {
+		return;
+	}
 	let soundImage = "assets/images/speaker.png";
 	let mutedImage = "assets/images/speaker-muted.png";
 	
