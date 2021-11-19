@@ -10,6 +10,9 @@
 3. No scroll on index page - reduce padding above
 ### Known Bugs
 * Click Pause after the audio/typing has finished, then when you play again there can be more than one audio track playing at the same time.
+* Does not scroll on desktop - remove top padding?
+* Animated gifs do not pause when the story is paused.
+* When user sets the font size to large on their browser, text overflows the speech bubble.
 ## UX
 ### Storyboard
 ![Scene 1](C:\Code Institute\Portfolio 2 Javascript\Portfolio-2-JS-Short-Story-Animation\documentation\ux\storyboard\scene1.png)
@@ -21,6 +24,8 @@
 ![Scene 7](C:\Code Institute\Portfolio 2 Javascript\Portfolio-2-JS-Short-Story-Animation\documentation\ux\storyboard\scene7.png)
 ![Scene 8](C:\Code Institute\Portfolio 2 Javascript\Portfolio-2-JS-Short-Story-Animation\documentation\ux\storyboard\scene8.png)
 ![Scene 9](C:\Code Institute\Portfolio 2 Javascript\Portfolio-2-JS-Short-Story-Animation\documentation\ux\storyboard\scene9.png)
+### Accessibility
+* This Social Story Animation can be controlled with only the keyboard (no mouse needed)
 
 ## Design Decisions
 ### Colour
@@ -106,6 +111,7 @@ Pandemics and the Coronavirus](https://carolgraysocialstories.com/wp-content/upl
 | Javascript - Add background image                      | DelftStack                | https://www.developphp.com/video/JavaScript/Audio-Play-Pause-Mute-Buttons-Tutorial                                                                                                         |
 | Using REMs in CSS                                      | Aleksandr Hovhannisyan    | https://www.aleksandrhovhannisyan.com/blog/respecting-font-size-preferences-rems-62-5-percent/#is-this-accessible  |
 |           EM based media queries                       |  Lyza Gardner             |             https://cloudfour.com/thinks/the-ems-have-it-proportional-media-queries-ftw/                                                                                   |
+|           Javascript event handler keydown                       | Go Make Things             |             https://gomakethings.com/named-vs-anonymous-event-listener-functions                                                                  |
 
 ### Pictures
 
