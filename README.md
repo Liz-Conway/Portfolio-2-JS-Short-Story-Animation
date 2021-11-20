@@ -5,15 +5,14 @@
 ## Overview
 ## Features
 ### Future features to implement
-1. 404 error page
-3. No scroll on index page - reduce padding above
+
 ### Known Bugs
 * Click Pause after the audio/typing has finished, then when you play again there can be more than one audio track playing at the same time.
 * Does not scroll on desktop - remove top padding?
-* Animated gifs do not pause when the story is paused.
+* nimated gifs do not pause when the story is paused.
 * When user sets the font size to large on their browser, text overflows the speech bubble.
 * Slight delay in changing the picture on smaller devices.
-* Keyboard working to mute/unmute speaker, BUT click NOT working any more.
+* Typing stuttering is back!
 ## UX
 ### Storyboard
 ![Scene 1](documentation\ux\storyboard\scene1.png)
@@ -47,11 +46,11 @@ A colour palette was generated from [coolors](https://coolors.co).  The colours 
 
 ### Validation
 **CSS** was validated using [W3C CSS validator](https://jigsaw.w3.org/css-validator/validator)
-![CSS Validated](C:\Code Institute\Portfolio 2 Javascript\Portfolio-2-JS-Short-Story-Animation\documentation\validation\css-validation.png)
+![CSS Validated](documentation\validation\css-validation.png)
 **HTML** was validated on the index page using [W3C HTML validator](https://validator.w3.org/)
-![html validation index page](C:\Code Institute\Portfolio 2 Javascript\Portfolio-2-JS-Short-Story-Animation\documentation\validation\html-validation-index-page.png)
+![html validation index page](documentation\validation\html-validation-index-page.png)
 **Javascript** was validated using [JSHint](https://jshint.com)
-![JSHint validation](C:\Code Institute\Portfolio 2 Javascript\Portfolio-2-JS-Short-Story-Animation\documentation\validation\jshint-validation.png)
+![JSHint validation](documentation\validation\jshint-validation.png)
 Both warnings relate to code that was taken from other code that has been sourced and is documented elsewhere.
 ### Documentation  
 - README.md :  Comprehensive overview of the Short Story Animation website detailing how it works, what its features are, the technologies involved and all the design decisions that were made in creating this infographic animation.
