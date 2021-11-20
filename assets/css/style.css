@@ -227,6 +227,18 @@ footer {
 	display: none;
 }
 
+.errorSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.error404 {
+  font-size: 10rem;
+  font-weight: 100;
+  margin: 3rem auto;
+}
+
 /* 950px/16px = 59.375em
 Media Queries for tablets in landscape orientation
 Using em instead of pixels for improved responsiveness to user zooming
