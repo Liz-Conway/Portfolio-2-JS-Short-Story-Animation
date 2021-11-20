@@ -58,12 +58,12 @@ function pageLoaded() {
  */
 function toggleMute(event) {
 	console.log("Event :  ",  event);
-	if(event !== undefined) {
-				console.log("Key Pressed :  ", event.key);
-	}
-	if(event.key !== "Enter") {
+	console.log("Event Type :  ",  event.type);
+	const allowableEvents = ["click", "keydown"];
+	if(!allowableEvents.includes(event.type)) {
 		return;
 	}
+	
 	let soundImage = "assets/images/speaker.png";
 	let mutedImage = "assets/images/speaker-muted.png";
 	
