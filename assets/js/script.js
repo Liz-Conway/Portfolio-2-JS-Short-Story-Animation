@@ -13,19 +13,15 @@ var scenesSetUp = false;
 document.addEventListener("DOMContentLoaded", pageLoaded());
 
 function pageLoaded() {
-	console.log("Window width :  ", window.innerWidth);
-	console.log("Window height :  ", window.innerHeight);
 	setUpScenes();
 	
 	let playButton = document.getElementById("playButton");
-	console.log("Play button :  ", playButton);
 	let pauseButton = document.getElementById("pauseButton");
 	let restartButton = document.getElementById("restartButton");
 	let rewindButton = document.getElementById("rewindButton");
 	let fastForwardButton = document.getElementById("fastForwardButton");
 	
 	/* Initially the only option is to play the animation */
-	//hideAllButtons();
 	showElement(playButton);
 	
 	/* Set the function to be called when the speaker image is clicked */
@@ -57,14 +53,11 @@ function pageLoaded() {
  * If sound is already muted then unmute it
  */
 function toggleMute(event) {
-	console.log("Event :  ",  event);
-	console.log("Event Type :  ",  event.type);
 	const allowableEvents = ["click", "keydown"];
 	if(!allowableEvents.includes(event.type)) {
 		return;
 	}
 	if(event.type === "keydown") {
-		console.log("Key Pressed :  ", event.key);
 		if(event.key !== "Enter" && event.key !== " ") {
 			return;
 		}
@@ -73,7 +66,7 @@ function toggleMute(event) {
 	let soundImage = "assets/images/speaker.png";
 	let mutedImage = "assets/images/speaker-muted.png";
 	
-	/* this refers to the speakerImage element */
+	/* 'this' refers to the speakerImage element */
 	let image = this.getAttribute("src");
 	if(image === soundImage) {
 		/* Speaker image so we must mute the sound, 
@@ -90,7 +83,6 @@ function toggleMute(event) {
 			then change to the unmuted image */
 		for(let scene of scenes) {
 			/* Audio is stored in scene[2] */
-			console.log("Scene::  ", scene[0]);
 			/*https://www.developphp.com/video/JavaScript/Audio-Play-Pause-Mute-Buttons-Tutorial*/
 			scene[2].muted = false;
 		}
@@ -138,7 +130,6 @@ function showScene(picture, sentences, audio, sceneNumber) {
 		picContainer.style.backgroundSize = "cover";
 	}
 	/* Reset the background image for other scenes */
-	console.log("Background pic :  ", picContainer.style.backgroundImage);
 	if(sceneNumber === 1 || sceneNumber === 6 || sceneNumber === 8) {
 		/* 1 = User Restarted the animation
 		 * 6 = User Rewound to the previous scene
@@ -154,8 +145,6 @@ function showScene(picture, sentences, audio, sceneNumber) {
 function typeParagraph(text) {
 	let status = getStatus();
 	if(isPaused() && status !== "Restarting") {
-		console.log("Unpausing typing");
-		console.log("Status :  ", status);
 		typed.start();
 	} else {
 		/* The first argument is the class of the element where the text will be typed 
@@ -335,7 +324,6 @@ function setUpScenes() {
 /*https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_win_settimeout_cleartimeout2*/
 function timedAnimation(scene) {
 	let sceneTime = getSceneTime();
-	console.log("timedAnimation():: scene :  ", scene);
 	let picture = scenes[scene][0];
 	let text = scenes[scene][1];
 	let audio = scenes[scene][2];
@@ -367,8 +355,7 @@ function getSceneTime() {
 	 * We can use this to calculate the remaining time for this scenario
 	 */
 	let progress = getProgressBarWidth();
-	//console.log("getSceneTime()::  ", sceneTime);
-	//console.log("getSceneTime():: progress bar width :  ", progress);
+
 	/* Progress bar is not at the start or the end, i.e. midway during the scene */
 	if(!isNaN(progress) && progress < 99) {
 		sceneTime = calculateRemainingTime(sceneTime, progress);
@@ -388,8 +375,6 @@ function getProgressBarWidth() {
 }
 
 function playAnimation() {
-	console.log("Start Animation");
-	
 	let sceneOfScenes = document.getElementById("sceneOfScenes");
 	if(!isElementVisible(sceneOfScenes)) {
 		showElement(sceneOfScenes);
@@ -408,17 +393,16 @@ function playAnimation() {
 }
 
 function stopAnimation() {
-	console.log("Stopping");
 	/*Pauses all scenes after this one*/
 	clearTimeout(t);
 	timer_is_on = false;
 	if(animationEnded()) {
-			hideAllButtons();
-			
-			let restart = document.getElementById("restartButton");
-			let rewind = document.getElementById("rewindButton");
-			showElement(restart);
-			showElement(rewind);
+		hideAllButtons();
+		
+		let restart = document.getElementById("restartButton");
+		let rewind = document.getElementById("rewindButton");
+		showElement(restart);
+		showElement(rewind);
 	} else {
 		pauseRunningScene(getCurrentIndex());
 	}
@@ -463,7 +447,6 @@ function animationEnded() {
 		let progress = getProgressBarWidth();
 		if(progress > 98) {		// Last Scene has ended
 			ended = true;
-			console.log("Animation ENDED");
 		}
 	}
 	
@@ -471,7 +454,6 @@ function animationEnded() {
 }
 
 function restartAnimation() {
-	console.log("Restarting");
 	setStatus("Restarting");
 	resetTyping();
 	updateSceneNumber(1);
@@ -484,7 +466,6 @@ function restartAnimation() {
 }
 
 function rewindAnimation() {
-	console.log("Rewinding");
 	setStatus("Restarting");
 	resetTyping();
 	/*Change the scene number on the page to current scene number -1
@@ -502,7 +483,6 @@ function rewindAnimation() {
 }
 
 function fastForwardAnimation() {
-	console.log("Fast Forwarding");
 	setStatus("Restarting");
 	resetTyping();
 	/*Change the scene number on the page to current scene number +1
@@ -625,4 +605,3 @@ function setTitle(element, title) {
 	/*https://stackoverflow.com/questions/27466969/how-to-add-attribute-to-html-element-using-javascript*/
 	element.setAttribute("title", title);
 }
-
