@@ -63,6 +63,12 @@ function toggleMute(event) {
 	if(!allowableEvents.includes(event.type)) {
 		return;
 	}
+	if(event.type === "keydown") {
+		console.log("Key Pressed :  ", event.key);
+		if(event.key !== "Enter" && event.key !== " ") {
+			return;
+		}
+	}
 	
 	let soundImage = "assets/images/speaker.png";
 	let mutedImage = "assets/images/speaker-muted.png";
