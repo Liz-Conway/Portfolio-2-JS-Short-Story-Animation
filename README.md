@@ -6,7 +6,6 @@
 ## Features
 ### Future features to implement
 1. 404 error page
-2. "Fatten" buttons on phones
 3. No scroll on index page - reduce padding above
 ### Known Bugs
 * Click Pause after the audio/typing has finished, then when you play again there can be more than one audio track playing at the same time.
@@ -17,15 +16,17 @@
 * Keyboard working to mute/unmute speaker, BUT click NOT working any more.
 ## UX
 ### Storyboard
-![Scene 1](C:\Code Institute\Portfolio 2 Javascript\Portfolio-2-JS-Short-Story-Animation\documentation\ux\storyboard\scene1.png)
-![Scene 2](C:\Code Institute\Portfolio 2 Javascript\Portfolio-2-JS-Short-Story-Animation\documentation\ux\storyboard\scene2.png)
-![Scene 3](C:\Code Institute\Portfolio 2 Javascript\Portfolio-2-JS-Short-Story-Animation\documentation\ux\storyboard\scene3.png)
-![Scene 4](C:\Code Institute\Portfolio 2 Javascript\Portfolio-2-JS-Short-Story-Animation\documentation\ux\storyboard\scene4.png)
-![Scene 5](C:\Code Institute\Portfolio 2 Javascript\Portfolio-2-JS-Short-Story-Animation\documentation\ux\storyboard\scene5.png)
-![Scene 6](C:\Code Institute\Portfolio 2 Javascript\Portfolio-2-JS-Short-Story-Animation\documentation\ux\storyboard\scene6.png)
-![Scene 7](C:\Code Institute\Portfolio 2 Javascript\Portfolio-2-JS-Short-Story-Animation\documentation\ux\storyboard\scene7.png)
-![Scene 8](C:\Code Institute\Portfolio 2 Javascript\Portfolio-2-JS-Short-Story-Animation\documentation\ux\storyboard\scene8.png)
-![Scene 9](C:\Code Institute\Portfolio 2 Javascript\Portfolio-2-JS-Short-Story-Animation\documentation\ux\storyboard\scene9.png)
+![Scene 1](documentation\ux\storyboard\scene1.png)
+
+![Scene 2](documentation\ux\storyboard\scene2.png)
+
+![Scene 3](documentation\ux\storyboard\scene3.png)
+![Scene 4](documentation\ux\storyboard\scene4.png)
+![Scene 5](documentation\ux\storyboard\scene5.png)
+![Scene 6](documentation\ux\storyboard\scene6.png)
+![Scene 7](documentation\ux\storyboard\scene7.png)
+![Scene 8](documentation\ux\storyboard\scene8.png)
+![Scene 9](documentation\ux\storyboard\scene9.png)
 ### Accessibility
 * This Social Story Animation can be controlled with only the keyboard (no mouse needed)
 
