@@ -3,61 +3,91 @@
 <head>
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
 	<!-- favicon links -->
-	<link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
-	<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
-	<link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
+	<link rel="apple-touch-icon" sizes="180x180"
+		href="assets/favicon/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32"
+		href="assets/favicon/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16"
+		href="assets/favicon/favicon-16x16.png">
 	<link rel="manifest" href="assets/favicon/site.webmanifest">
-	<meta name="description" content="A fully multi-sensory infographic animation to help peopole on the autism spectrum to understand the covid-19 pandemic.">
-<title>Social story animation - Coronavirus & Pandemics</title>
+	<!-- Meta description -->
+	<meta name="description"
+		content="A fully multi-sensory infographic animation to help peopole on the autism spectrum to understand the covid-19 pandemic.">
+	<title>Social story animation - Coronavirus & Pandemics</title>
 </head>
 <body>
+	<!-- Title of this infographic animation -->
 	<header>
 		<h1 class="utilCentreText">My Story about Pandemics and the Coronavirus</h1>
 	</header>
 	<main>
 		<section class="storySection">
+			<!-- This heading will show which scene we are on -->
 			<h2 id="sceneOfScenes" class="invisible">
 				Scene <span id="sceneNumber">0</span> of <span id="sceneTotal">9</span>
 			</h2>
+			<!-- Hidden span which holds the duration of every scene -->
 			<span id="sceneTime" class="invisible">25000</span>
+			<!-- Hidden span which will be used to store the current status of the playback of the animation -->
 			<span id="status" class="invisible"></span>
 			<div class="storyWrapper">
 				<div class="storyPicContainer">
-					<img alt="Picture for the story" 
-						src="assets/images/world-young-person.gif"
-						id="storyPicture">
+					<!-- This image element will be used by javascript to display
+					the appropriate animated gif for each scene -->
+					<img alt="Picture for the story"
+						src="assets/images/world-young-person.gif" id="storyPicture">
 				</div>
 				<div class="storyBubble">
+					<!-- This div will be used by the typesd.js library to 
+					type out the text for each scene, character by character -->
 					<div id="typed" class="storyText bubbleBottomLeft">
 						<p class="storyParagraph">PRESS PLAY BUTTON BELOW TO START</p>
 						<p class="storyParagraph">When playing you can press PAUSE</p>
-						<p class="storyParagraph">When paused you can RESTART, REWIND, PLAY or FAST FORWARD</p>
+						<p class="storyParagraph">When paused you can RESTART, REWIND,
+							PLAY or FAST FORWARD</p>
 					</div>
-					<img alt="Smiling Emoji" class="speechEmoji"
+					<!-- This image is an animated gif of a talking emoji -->
+					<img alt="Talking Emoji" class="speechEmoji"
 						src="assets/images/healthy-emoji.gif">
+					<!-- progressWrapper div shows the background of the progress bar -->
 					<!-- https://www.w3schools.com/howto/howto_js_progressbar.asp -->
 					<div id="progressWrapper">
-					  <div id="progressBar"></div>
+						<!-- This div shows the progress of the scene - from 0% - 100% -->
+						<div id="progressBar"></div>
 					</div>
 				</div>
 			</div>
 		</section>
 	</main>
 	<footer>
+		<!-- div containing the controls for the animation
+		All controls are invisible until the page has fully loaded -->
+		<!-- Setting a tabIndex on each control allow keyboard access to each control -->
 		<div id="controls">
+			<!-- Restart, Rewind, Play, Pause and Fast Forward buttons
+			Only the Play button will initially be displayed
+			Whilst playing only the Pause button will be visible
+			When paused the Restart, Rewind, Play and Fast Forward buttons will be visible,
+			unless we are on the first scene when the Rewind button will not be visible,
+			or if we are on the last scene when the Fast Forward button will not be visible -->
 			<div id="buttons">
 				<button id="restartButton" class="btn invisible" tabindex="0">Restart</button>
 				<button id="rewindButton" class="btn invisible" tabindex="1">Rewind</button>
 				<button id="playButton" class="btn invisible" tabindex="2">Play</button>
 				<button id="pauseButton" class="btn invisible" tabindex="3">Pause</button>
-				<button id="fastForwardButton" class="btn invisible" tabindex="4">Fast Forward</button>
+				<button id="fastForwardButton" class="btn invisible" tabindex="4">Fast
+					Forward</button>
 			</div>
-			<img alt="Speaker" src="assets/images/speaker.png" 
-				id="speaker" class="invisible" tabindex="5"
-				role="button" aria-pressed="false">
+			<!-- Clicking on this image will allow the user to mute and unmute the sound
+			Aria: role="button" allows screen readers to announce the image as a functional button
+			Aria: aria-pressed allows screen readers to announce the button as a toggle button
+			      and  annouunce its initial state -->
+			<!-- https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/button_role -->
+			<img alt="Speaker" src="assets/images/speaker.png" id="speaker"
+				class="invisible" tabindex="5" role="button" aria-pressed="false">
 		</div>
 	</footer>
 	<script src="assets/js/vendor/typed.min.js"></script>
