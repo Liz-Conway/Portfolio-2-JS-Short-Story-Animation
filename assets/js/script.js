@@ -108,6 +108,9 @@ function toggleMute(event) {
 function showScene(picture, sentences, audio, sceneNumber) {
 	/* Get reference to the main image on the page */
 	let pictureImage = document.getElementById("storyPicture");
+	/* Set the image on the screen to the picture passed into this function */
+	pictureImage.src = picture;
+
 	/* Display the number of this scene */
 	updateSceneNumber(sceneNumber);
 	
@@ -121,9 +124,6 @@ function showScene(picture, sentences, audio, sceneNumber) {
 		E.G. ^500 pauses the typing for a half a second (500ms)
 	 */
 	let sentencePause = "^1000";
-
-	/* Set the image on the screen to the picture passed into this function */
-	pictureImage.src = picture;
 
 	let sceneParagraph = "";
 
