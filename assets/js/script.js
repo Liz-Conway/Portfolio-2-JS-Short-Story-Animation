@@ -242,7 +242,7 @@ function progress(barTime) {
 		 * but it is as I copied from W3 Schools */
 		function frame() {
 			/* When restarting need to reset the width of the progress bar */
-			if(getStatus() == "Restarting") {
+			if(getStatus() === "Restarting") {
 				width = 1;
 				setStatus("");
 			}
@@ -621,7 +621,9 @@ function restartAnimation() {
  * Show only Pause button
  * Play animation */
 function rewindAnimation() {
-	/* setStatus("Restarting"); */
+	/* Set the status to "Restarting" 
+	 * This will reset the progress bar */
+	setStatus("Restarting");
 	resetTyping();
 
 	/*Change the scene number on the page to current scene number -1
