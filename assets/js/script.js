@@ -436,12 +436,15 @@ function getSceneTime() {
 
 	/* IF Progress bar is not at the start or the end, 
 	 * i.e. midway during the scene */
-	if(!isNaN(progress) && progress < 99) {
+	if(!isNaN(progress) && progress < 97) {
 		/* Scene has been paused during the playback
 		 * Calculate the remaining time
 		 * Use the remaining time as the duration for this scene */
-		sceneTime = calculateRemainingTime(sceneTime, progress);
-	} 
+		let remainingTime = calculateRemainingTime(sceneTime, progress);
+		if(remainingTime > 1000) {	// More than one second remaining
+			sceneTime = remainingTime; 
+		}		 
+	}
 	return sceneTime;
 }
 
