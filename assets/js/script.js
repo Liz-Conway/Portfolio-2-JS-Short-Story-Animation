@@ -241,13 +241,17 @@ function progress(barTime) {
 		/* JSHint complains about this function
 		 * but it is as I copied from W3 Schools */
 		function frame() {
+			/* When restarting need to reset the width of the progress bar */
 			if(getStatus() == "Restarting") {
 				width = 1;
 				setStatus("");
-			} else  if(width >= 100) {
+			}
+			
+			/* If the scene is finished */
+			if(width >= 100) {
 				clearInterval(id);
 				running = false;
-			} else {
+			} else {		// The scene is still running
 				if(!isPaused()) {
 					/* Increase the width to move the progress bar on */
 					width++;
