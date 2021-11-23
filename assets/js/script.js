@@ -194,6 +194,9 @@ function typeParagraph(text) {
  * Otherwise the typing for the next scene will not work
  */
 function clearParagraph() {
+	if(typed !== undefined) {
+		typed.reset(false);
+	}
 	/* Get reference to the paragraph where the story is being typed out */
 	let storyParagraphs = document.getElementsByClassName("storyParagraph");
 	
@@ -803,7 +806,6 @@ function resetAudio() {
  */
 function resetTyping() {
 	/* clear any text already there */
-	clearParagraph();
 	/* Reset the typing */
 	typed.reset(false);
 }
