@@ -5,6 +5,7 @@ var t;			// Current timed animation
 var timer_is_on = false;
 var scenes;		// Array holding all the scenes data
 var scenesSetUp = false;
+var ended = false;
 
 /*
  * Only let the user play the animation once the DOM has finished loading
@@ -139,6 +140,7 @@ function showScene(picture, sentences, audio, sceneNumber) {
 	typeParagraph(sceneParagraph);
 	/* Play the audio */
 	audio.play();
+	ended = false;
 	
 	/* Get a reference to the container that wraps the main image */
 	let picContainer = document.getElementsByClassName("storyPicContainer")[0];
@@ -254,6 +256,11 @@ function progress(barTime) {
 			if(width >= 100) {
 				clearInterval(id);
 				running = false;
+				if(getStatus() === "End") {
+					stopAnimation();
+					setStatus("");
+					ended = true;
+				}
 			} else {		// The scene is still running
 				if(!isPaused()) {
 					/* Increase the width to move the progress bar on */
@@ -412,7 +419,7 @@ function timedAnimation(scene) {
 		t = setTimeout(timedAnimation, sceneTime, ++scene);
 	} else {
 		/* No more scenes so stop the animation */
-		setTimeout(stopAnimation, sceneTime);
+		setStatus("End");
 	}
 }
 
@@ -752,7 +759,13 @@ function isPaused() {
 	/* Get reference to restart button */
 	let restartButton = document.getElementById("restartButton");
 	
-	return isElementVisible(restartButton);
+	/* The animation is paused if the Restart button is visible */
+	let paused = isElementVisible(restartButton);
+	/* The only exception is when the animation has ended completely */
+	
+	/* If the animation has ended it is not paused
+	 * otherwise the paused state depends on whether the Restart button is showing */
+	return paused && !ended;
 }
 
 /**
