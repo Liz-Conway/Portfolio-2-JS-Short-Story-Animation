@@ -2,7 +2,7 @@
 since these variables need to be accessed by multiple functions*/
 var typed;	// For typed.js, used in writing out phrases character by character
 var t;			// Current timed animation
-var timer_is_on = false;
+var timerIsOn = false;
 var scenes;		// Array holding all the scenes data
 var scenesSetUp = false;
 var ended = false;
@@ -493,8 +493,8 @@ function playAnimation() {
 	
 	/* Get the index of the current scene to run */
 	let scene = getCurrentIndex();
-	if (!timer_is_on) {
-		timer_is_on = true;
+	if (!timerIsOn) {
+		timerIsOn = true;
 		/* Run the timed animation */
 		timedAnimation(scene);
 	}
@@ -512,7 +512,7 @@ function playAnimation() {
 function stopAnimation() {
 	/*Pauses all scenes after this one*/
 	clearTimeout(t);
-	timer_is_on = false;
+	timerIsOn = false;
 	
 	/* If  at the end then only show Restart and Rewind buttons */
 	if(animationEnded()) {
